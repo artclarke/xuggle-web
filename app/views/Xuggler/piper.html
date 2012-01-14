@@ -1,0 +1,97 @@
+<div id="content" class="column">
+<h1>Piper Demonstration</h1>
+<h2>Overview</h2>
+<p>The piper demonstration application demonstrates the use of <a
+  href="http://www.xuggle.com/xuggler">Xuggler</a> to decode a live
+video feed on the fly, add various graphical effects (a.k.a.
+&quot;filters&quot;) in a basic pipeline, and retransmit the modified
+video stream.</p>
+<p>All effects <strong>modify the live video in place</strong> and
+then audience members receive both a modified and unmodified video
+stream. This demonstration does not use flash-overlays for effects. <strong>All
+video modification is done on the server with no software download on
+the clients. </strong>
+</p>
+<p>Lastly, this demonstration will only be up for a limited time since,
+well, we have to pay for bandwidth and stuff.  Still, if it's down, drop
+us a line at info (at) xuggle.com and we'll try to restart it.</p>
+<table>
+  <thead>
+    <tr>
+      <td>Component</td>
+      <td>Description</td>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><a href="http://demo.xuggle.com/piper/PiperPublish.html">Publish</a>
+      </td>
+      <td>
+      <p><strong>YOU MUST FIRST PUBLISH A STREAM USING THIS APP BEFORE USING
+      THE CONTROL ROOM APP BELOW</strong></p>
+      <p>Publishes your webcam to the server and then plays back a
+      unmodified and modified version of the stream back to you.</p>
+      <p><strong>To enable your camera, click the small
+      black box in the lower right-hand corner</strong></p>
+      <p>To connect to a different piper server, click on the text
+      at the bottom middle of the page, and enter a new server address
+      in the box that comes up.</p>
+      </td>
+    </tr>
+    <tr>
+      <td><a href="http://demo.xuggle.com/piper/PiperControl.html">Control</a>
+      </td>
+      <td>
+      <p>The Piper Control Room. This very basic interface allows
+      you to take a stream that is being &quot;published&quot; and start
+      adding live filters to modify the video.  <strong>IT ASSUMES
+      YOU ARE ALREADY PUBLISHING A STREAM IN THE PUBLISH APP ABOVE</strong>
+      </p>
+      <p>To enable a video filter, select the desired filter from
+      the drop down and then hit the &quot;active&quot; button.</p>
+      <p>To configure the effect, press the &quot;config&quot;
+      button.</p>
+      <p>Effects are applied in order; up to 8 effects total</p>
+      <p>To clear all filters, select the &quot;Clear Filters&quot;
+      button.</p>
+      <p>Each &quot;control room&quot; can only control one stream;
+      use the &quot;Set Name&quot; button to change the stream. There is
+      also a bug in the Control Room where if you lose your connection
+      it will incorrectly report that no filters are currently set (although
+      their effects will still be visible). Click &quot;Clear
+      Filters&quot; to set it up again.</p>
+      <p>If another Internet Browser or user is using the Control Room at
+      the same time that you are, well, results are likely to be
+      somewhat undefined. This is a demo after all -- not a full
+      functioning application with things like access control. If
+      someone else is screwing around with the control room, try waiting
+      a while for them to finish.</p>
+      </td>
+    </tr>
+    <tr>
+      <td><a href="http://demo.xuggle.com/piper/PiperView.html">View</a>
+      </td>
+      <td>
+      <p>For audience members who want to watch the Piper demo.
+      Connect to the piper server and you will see the unmodified live
+      stream on the left, and the modified stream on the right.</p>
+      </td>
+    </tr>
+  </tbody>
+
+</table>
+<p>If you want to check if we're being honest about this, the RTMP
+stream for an unmodified stream named &quot;demo&quot; can be access
+at:</p>
+<pre>rtmp://demo.xuggle.com/piper/demo</pre>
+<p>and the modified stream for the input stream &quot;demo&quot; can
+be found at:</p>
+<pre>rtmp://demo.xuggle.com/piper/piper_demo</pre>
+<p>You can use any old RTMP-based player you want to see them in
+action.  Change the string &quot;demo&quot; to whatever you've set in
+the &quot;Set Name&quot; box to see other streams</p>
+<p>
+Note: This demonstration was originally presented at
+<a href="http://www.fitc.ca">FITC</a>
+</p>
+</div>

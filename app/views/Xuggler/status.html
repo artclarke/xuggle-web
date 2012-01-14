@@ -1,0 +1,73 @@
+#{extends 'main-sidebar.html' /}
+#{set title:'Xuggler Status' /}
+#{set tab:'status' /}
+<h2>Xuggler Status</h2>
+<p>
+Here's where you'll find the latest information on Xuggler development,
+transparency to our latest testing efforts, and instructions on how to
+donate code to the project if you want.</p>
+<h3><a href="http://build.xuggle.com/view/Stable/">Latest Builds</a></h3>
+<p>
+Xuggle maintains a continuous-build server for our projects. You can
+check it out here for the latest and greatest builds of our software.
+</p>
+<p class="readIt"><a href="http://build.xuggle.com/view/Stable/"> Visit the
+Xuggle Continuous Build Server &#187; </a></p>
+Sometimes people get impatient waiting for an official release, and want to
+use the very latest (and sometimes experimental) version of Xuggler.  If you're
+one of those people, but also don't want to build Xuggler yourself, our continuous
+build server makes installers out of any build that passes all Xuggler tests.
+<p class="readIt"><a href="http://build.xuggle.com/job/xuggler_jdk5_stable/">Download Tip Of Tree Installers</a></p>
+<h3>Latest Test Results</h3>
+<p>
+Xuggler development is under a &quot;test first, ask questions
+later&quot; philosophy.</p>
+<p>
+That means each new feature should come with self-contained tests; each
+bug fix should have a regression test; and all tests should be run
+frequently to keep us honest.
+</p>
+<p>
+We run those tests on every checkin as part of our continuous build
+framework. See here for the very latest results.
+</p>
+<p class="readIt"><a
+  href="http://build.xuggle.com/job/xuggle_xuggler_binary_build/lastBuild/testReport/">
+See the Latest Test Results &#187; </a></p>
+<p>On Linux systems, we run a robust memory leak and corruption test
+on every checkin. You can see the latest results below.</p>
+<p class="readIt"><a
+  href="http://build.xuggle.com/job/xuggle_xuggler_memcheck/lastBuild/console">
+See the Latest Memory Leak &amp; Corruption Test Results &#187; </a></p>
+<h3>Donating Code to the Xuggler Project</h3>
+<p>If you'd like to donate code to the Xuggler project we're all for it.
+There are however certain restrictions and conventions you need to
+follow in order for us to accept your code:</p>
+<ul>
+  <li>You <b>must</b> execute the
+  #{a @Xuggler.contributor()}
+  Xuggle Contributor Agreement
+  #{/a}
+   and send us
+  a scanned copy with signature (see the agreement for where to send
+  it to).  This agreement is similar to the agreement GNU
+  uses for user-contributed code and ensures we can continue to offer
+  Xuggler as open-source, even if your management later decides they want
+  to retract your code.</li>
+  <li>You <b>must</b> submit test-cases (either JUnit or CPPTest)
+  test cases for your bug fix or new feature</li>
+  <li>You <b>must</b> follow the 
+  #{a @Xuggler.codingstandards() }
+  source code conventions
+  #{/a}
+   in the Xuggler files.</li>
+  <li>You <b>must</b> run the "ant run-memcheck" test suite if you
+  add CPP code, and add appropriate tests for leaks.</li>
+  <li>You <i>should</i> provide documentation of your change
+  (really increases your chances of acceptance).</li>
+  <li>You <i>should</i> shower on a regular basis; really; people
+  prefer that.</li>
+</ul>
+To submit your patches, please use the <a href="http://groups.google.com/group/xuggler-users">xuggler-users</a>
+forum.
+

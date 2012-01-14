@@ -1,0 +1,12 @@
+.*
+!.gitignore
+eclipse
+lib
+logs
+log
+test-result
+precompiled
+javadoc
+tmp
+server.pid
+db

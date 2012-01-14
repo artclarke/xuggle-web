@@ -1,0 +1,361 @@
+@charset "utf-8";
+
+/* CSS Document */ /*
+xuggle red: 990000      
+ 75% desat: 892b2b
+aaffmpeg orange: f5b619
+orange 75% desat: f5c64e
+orange 50% desat: f4d387
+orange 25% desat: f4e4be
+orange 10% desat  75% shade: b8b3a7
+link blue: 1c1cf4
+visited link: b78515
+border: b89f65
+headers: serif;
+body type: tahoma, helvetica, sans-serif;
+content: fff7e6;
+*/
+html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,font,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td
+  {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  vertical-align: baseline;
+  background: transparent;
+  color: #404040;
+}
+
+ol,ul,li {
+  vertical-align: baseline;
+  background: transparent;
+}
+
+blockquote,q {
+  quotes: none;
+}
+
+blockquote:before,blockquote:after,q:before,q:after {
+  content: '';
+  content: none;
+}
+
+/* remember to define focus styles! */
+:focus {
+  outline: 0;
+}
+
+/* remember to highlight inserts somehow! */
+ins {
+  text-decoration: none;
+}
+
+del {
+  text-decoration: line-through;
+}
+
+html {
+  background: white;
+}
+
+body {
+  position: relative;
+  margin: 1em auto;
+  font: 12px/ 1.5 Tahoma, Helvetica, sans-serif;
+  width: 72em;
+}
+
+ol,ul {
+  list-style: inherit;
+}
+
+h1,h2,h3,h4,h5,h6 {
+  color: #990000;
+  font-family: serif;
+}
+
+h1 {
+  font-size: 2em;
+  margin-bottom: .5em;
+}
+
+h2 {
+  font-size: 1.6em;
+}
+
+a {
+  color: #cc1a1a;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+pre {
+  position: relative;
+  padding: 1em;
+  margin: 1em auto;
+  font-family: "Courier New", Courier, monospace;
+  background: #fff7e6;
+  border: 1px solid #c0c0c0;
+}
+
+td pre {
+  margin-left: .5em;
+  width: auto;
+}
+
+#header {
+  padding: 1em;
+  width: auto;
+  overflow: hidden;
+  text-align: center
+}
+
+#logo {
+  width: auto;
+  float: left;
+}
+
+#download {
+  width: auto;
+  float: right;
+  margin: 2.5em 2em 0 0;
+}
+
+#main {
+  position: relative;
+  overflow: hidden;
+  padding: 0 0 0 14em;
+  height: 100%;
+}
+
+.column {
+  position: relative;
+  float: left;
+  display: inline;
+}
+
+#content {
+  padding: 1em 1em 2em;
+  width: auto;
+  height: 100%;
+}
+
+#content h2,#content p {
+  margin: 0 0 1em;
+}
+
+#home #main,#xuggle-about #main,#contact #main {
+  position: relative;
+  padding: 0 0 0 0;
+  height: 100%;
+}
+
+#definition {
+  font-size: 1.8em;
+  padding: 0 2.4em 0 2.4em;
+}
+
+#home #content {
+  padding: 0 3em 0 3em;
+}
+
+#home h2 {
+  font-size: 1.2em;
+}
+
+/* sidebar */
+#sideBar {
+  width: 14em;
+  margin: 0 0 0 -100%;
+  right: 14em;
+  background: #d0d0d0;
+}
+
+#sideBar a {
+  text-decoration: none;
+  color: black;
+  display: block;
+  padding: .5em 1em;
+}
+
+#sideBar a:hover {
+  color: c0c0c0;
+}
+
+#sideBar ul {
+  padding: .7em 0;
+  list-style: none;
+}
+
+#sideBar li {
+  text-align: right;
+  font-size: 1.2em;
+}
+
+#sideBar li:hover {
+  background: #992020;
+}
+
+/*
+=content and indexes
+------------------------------------------------------------------------
+*/
+#about #tab1,#red5 #tab2,#downloads #tab3,#faq #tab4,#tutorials #tab5,#doc #tab6,#support #tab7,#status #tab8, #demos #tab9, #licensing #tab10
+  {
+  background: white;
+}
+
+#about #tab1 a,#red5 #tab2 a,#downloads #tab3 a,#faq #tab4 a,#tutorials #tab5 a,#doc #tab6 a,#support #tab7 a,#status #tab8 a,#demos #tab9 a, #licensing #tab10 a
+  {
+  color: black;
+}
+
+.readIt {
+  text-align: right;
+  font-weight: 700;
+}
+
+.readIt a {
+  color: #232323;
+}
+
+#footer {
+  padding: 1em;
+  color: #555;
+  font-size: .8em;
+}
+
+#footer ul {
+  margin: 0;
+  padding: 0;
+  margin-top: .5em;
+  text-align: center;
+  list-style: none;
+}
+
+#footer li {
+  display: inline;
+  border-right: 1px solid;
+  padding: 0 5px 2px 5px;
+  line-height: 1;
+}
+
+#footer a {
+  color: #0000B9;
+}
+
+#footer li:last-child {
+  border: 0;
+}
+
+#footer p {
+  margin-top: 1em;
+  text-align: center;
+}
+
+/*
+ * Tables
+ */
+table {
+  border: 1px solid #e0e0e0;
+  border-bottom: 0px solid green;
+  border-collapse: collapse;
+}
+
+td,tc,tr {
+  border-bottom: 1px solid #e0e0e0;
+  padding: .5em;
+  vertical-align: top;
+  background: #fffafa;
+}
+
+td {
+  
+}
+
+tc {
+  
+}
+
+/*
+release styles 
+*/
+#content .relInfo {
+  margin-bottom: 1em;
+}
+
+#content .relInfo .releaseHiLite {
+  text-align: left;
+  color: black;
+  background: #ffe0e0;
+  font-size: 1em;
+  font-weight: 700;
+  padding: 1px 3px;
+}
+
+#content .relInfo th {
+  width: 16em;
+  background: #ffe0e0;
+  text-align: left;
+  font-weight: 400;
+}
+
+#content .relInfo td {
+  width: 38.55em;
+}
+
+#content .relTable,.relInstall thead th {
+  font-weight: 400;
+  font-size: 1em;
+  background: #ffe0e0;
+  padding: .2em;
+}
+
+#content .relTable,.relInstall tbody th {
+  text-align: left;
+  padding: .5em;
+  font-weight: 400;
+  font-size: 1em;
+}
+
+#content .relTable,.relInstall tbody tr {
+  vertical-align: middle;
+}
+
+.releases {
+  background: white;
+}
+
+.releasesHeader,.releaseVersionHeader,.releaseDateHeader,.releaseDescriptionHeader,.releaseDownloadHeader
+  {
+  text-align: left;
+  background: blue;
+}
+
+.releaseVersion {
+  
+}
+
+.releaseDate {
+  
+}
+
+.releaseDescription {
+  
+}
+
+.releaseDownloadHeader {
+  
+}
+
+.releaseDownload {
+  
+}
+/*
+div {
+  border: solid black;
+}
+*/

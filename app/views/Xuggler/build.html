@@ -1,0 +1,317 @@
+#{extends 'main-sidebar.html' /}
+#{set title:'Xuggler Build' /}
+#{set tab:'download' /}
+<h1>Basic Build Instructions</h1>
+<p>So you've decided you want to build Xuggler yourself. Good on you.
+It's not for the timid though. This page gives detailed instructions.
+But if you don't want to deal with this, try one of our installers on
+the downloads page.</p>
+
+<h2>Prerequisite Software</h2>
+<p>You need to have the following software installed:</p>
+<table cellspacing="0" >
+  <tr>
+    <th>OS</th>
+    <th>Software</th>
+  </tr>
+  <tr>
+    <td>Required</td>
+    <td>
+    <ul>
+      <li><a href="http://java.sun.com/javase/downloads/index.jsp">Sun
+      Java 1.5 or higher JDK</a></li>
+      <li><a href="http://ant.apache.org/">Ant 1.7 or higher</a></li>
+      <li><a href="http://www.perl.org/">Perl 5.6 or higher</a></li>
+      <li><a href="http://gcc.gnu.org/">gcc/g++ 3.2 or higher</a></li>
+      <li><a href="http://www.gnu.org/software/make/">gmake
+      3.81 or higher</a></li>
+      <li><a href="http://www.tortall.net/projects/yasm/"> Yasm 0.7 or higher </a></li>
+      
+      <li>Internet Access. The first time you build Xuggler it will
+      download some required <code>.jar</code> files using <a
+        href="http://ant.apache.org/ivy/"
+      >Ivy</a>.</li>
+      <li>Make sure you create a directory for <code>$XUGGLE_HOME</code>
+      if you've defined it.</li>
+    </ul>
+    </td>
+  </tr>
+  <tr>
+    <td>Additional Windows Requirements</td>
+    <td>
+    <ul>
+      <li><a href="http://www.microsoft.com/express/vc/">
+      Microsoft's Visual C++ compiler for the <code>lib</code> tool.
+      </a>
+      </li>
+      <li><a href="http://www.mingw.org/">
+        mingw and msys with
+      windows runtime 3.15.1 and gcc 4.2.4; other versions may not work
+      </a>
+      </li>
+      <li><a href="http://www.mingw.org/">
+        Perl compiled for mingw and msys.  ActiveState perl will not work.
+      </a>
+      </li>
+      <li><a href="http://johnniewalker.com/">johnnie walker, 2
+      drinks or higher</a></li>
+    </ul>
+    </td>
+  </tr>
+  <tr>
+    <td>Additional Mac Requirements</td>
+    <td>
+      <ul>
+        <li>
+          <p>Get the most recent 
+            <a href="http://developer.apple.com/TOOLS/xcode/">
+              Apple development tools (XCode 3.1.2 or later)
+            </a>
+          </p>
+        </li>
+        <li>
+          <p>
+            Some OS X users have found that if the number of environment
+            variables is fewer then 40, javac core dumps.  A work around
+            for this is to create a number of dummy environment
+            variables before compiling Xuggler:</p>
+            <pre>for i in {1..40}; do export xuggler$i=foo; done</pre>
+            <p>
+            Once Xuggler is installed, these dummy environment variables
+            need not persist.  Please pardon the voodoo.
+          </p>
+        </li>
+        <li>
+          <p>
+            Some OS X users have found that adding /usr/local/lib to the
+            DYLD_LIBRARY_PATH environment variable causes problems with a
+            number of command line programs.  $XUGGLE_HOME/lib/ will need
+            to be added DYLD_LIBRARY_PATH and thus we advise against
+            installing Xuggler directly into /usr/local.
+          </p>
+        </li>
+        <li>
+          <p>
+            We have found that excuting <code><b>sudo ant install
+            </b></code> will not get the RED5 environment settings.  The
+            following should ensure Xuggler installs into RED5.
+            </p>
+            <pre>su root
+ant install
+exit</pre>
+
+        </li>
+        <li>
+          <p>
+            On Mac, we build the 64 bit version by default (which seems to
+            work with 1.6.  It also works with Java 1.5 if you run Java
+            in "-server" mode.  If you need to force it to 32 bit (java 1.5 client mode), pass
+            the following option on all <code><b>ant</b></code> calls:
+          </p>
+          <pre>ant -Dbuild.m64=no</pre>
+        </li>
+      </ul>
+    </td>
+  </tr>
+  <tr>
+    <td>Optional Software</td>
+    <td>See the Optional Software Section in the Advanced building
+    topics.</td>
+  </tr>
+</table>
+<h2>Getting the Source Code</h2>
+<p>You can get the latest Xuggler source code here:</p>
+<pre>
+svn checkout <a href="http://xuggle.googlecode.com/svn/trunk/java/xuggle-xuggler">http://xuggle.googlecode.com/svn/trunk/java/xuggle-xuggler</a> xuggle-xuggler
+</pre>
+<h2>Setting up your environment</h2>
+<p>Xuggle looks for an environment variable called <code>XUGGLE_HOME</code>
+to determine where to install itself to.</p>
+<p>You will also need to add <code>$XUGGLE_HOME/bin</code> to the <code>PATH</code>
+variable on your system, and <code>$XUGGLE_HOME/lib</code> to the
+dynamic library load directories on your system. The following table
+summarizes the settings for the major OS groups.</p>
+<table cellspacing="0" >
+  <tr>
+    <th>OS</th>
+    <th>Environment settings</th>
+  </tr>
+	<tr>
+		<td><img
+			src="http://upload.wikimedia.org/wikipedia/commons/thumb/3/35/Tux.svg/150px-Tux.svg"
+			height="50" /> Linux</td>
+
+		<td>
+    <p>You can set XUGGLE_HOME to any directory you like, and if not set, we'll
+    default to /usr/local (like most open source projects).  You may want
+    to use your own setting though to make it easier to add and remove,
+    and to avoid overwriting any other installations of FFmpeg you may have.</p>
+		<pre>
+export XUGGLE_HOME=/usr/local/xuggler
+export PATH=$XUGGLE_HOME/bin:$PATH
+export LD_LIBRARY_PATH=$XUGGLE_HOME/lib:$LD_LIBRARY_PATH</pre>
+        Optionally, set <code>$XUGGLE_REPO</code> to a directory where you want ant to install published ivy jars (if you don't set it, it defaults to dist/ivy in your build directory).
+
+		</td>
+	</tr>
+
+	<tr>
+    <td><img
+      src="http://upload.wikimedia.org/wikipedia/en/d/db/OSXLeopard.svg"
+      height="50"
+    /> Mac OS-X</td>
+    <td>
+<pre>
+export XUGGLE_HOME=/usr/local/xuggler
+export PATH=$XUGGLE_HOME/bin:$PATH
+export DYLD_LIBRARY_PATH=$XUGGLE_HOME/lib:$DYLD_LIBRARY_PATH</pre>
+        Optionally, set <code>$XUGGLE_REPO</code> to a directory where you want ant to install published ivy jars (if you don't set it, it defaults to dist/ivy in your build directory).
+
+</td>
+  </tr>
+
+  <tr>
+    <td><img
+      src="http://upload.wikimedia.org/wikipedia/en/b/b7/Windows_logo.svg"
+      height="50"
+      alt="Windows"
+    /></td>
+    <td><p>Building on Windows is a big PITA. Alas, Windows doesn't have a nice command line way of
+    setting variables, but using their GUI tool, set the following:</p>
+      <ul>
+      <li>
+        Set <code>XUGGLE_HOME</code> to a directory of your
+      choice (make sure the directory exists on disk).
+      When building, you must make sure that your XUGGLE_HOME is on your C: drive, and is in a path with no spaces in it.  Sorry.  This restriction does not apply if you use the installer.
+      </li>
+      <li>Add <code>%XUGGLE_HOME%\bin;</code> to the start of your
+      <code>PATH</code> environment variable.</li>
+      <li>
+        Optionally, set <code>%XUGGLE_REPO%</code> to a directory where you want ant to install published ivy jars (if you don't set it, it defaults to dist/ivy in your build directory).
+      </li>
+      </ul>
+    </td>
+  </tr>
+</table>
+<h2>Building (the easy way)</h2>
+<p>After you've checked out the latest code, run the following from that
+directory:</p>
+<pre>
+ant run-tests
+</pre>
+<p>
+Check that all tests ran 100% successfully. If they did, then execute:
+</p>
+<pre>
+sudo ant install
+</pre>
+<p>to install the shared libraries into their default <code>$XUGGLE_HOME</code>
+location.</p>
+<h3>Building the 64-bit version of Xuggler</h3>
+<p><strong>Note: If you're using a 64-bit JVM you must build the 64-bit
+version of Xuggler</strong></p>
+<p>
+  On OS except Mac, the build should auto-detect 64 bit versus 32 bit.  On Mac you'll
+  default to 64-bit.  If you need 32-bit binaries (for example, for the
+  Apple Java 1.5 JVM in client mode), you'll need to tell the build system
+  to build 32 bit.  For that:
+</p>
+<pre>
+ant -Dbuild.m64=no clobber run-tests
+</pre>
+<p>
+Once you do that, any other <code>ant</code> commands will continue to
+use the 32-bit version until the next time <code>ant</code> runs <code>configure</code>.
+</p>
+<h3>Cleaning Your Build Tree</h3>
+<p>To clean out your build tree of all Java compiled files, run:</p>
+<pre>
+ant clean-java
+</pre>
+<p>
+This will not clean out the native build tree (as that is often time
+consuming to rebuild). To completely nuke all generated files, including
+native files, run:
+</p>
+<pre>
+ant clobber
+</pre>
+<h2>Supported Operating Systems</h2>
+<p>
+Here's a list of the OSes we know Xuggle has been built and run on (with
+all tests passing 100%). You're welcome to try building on other
+systems, but your mileage may vary. Please let us know your results if
+you do so we can update this page.</p>
+<table cellspacing="0">
+  <tr>
+    <th>OS Family</th>
+    <th>OS Version</th>
+    <th>32 Bit</th>
+    <th>64 Bit</th>
+  </tr>
+  <tr>
+    <td
+      rowspan="2"
+      align="center"
+    ><img
+      src="http://upload.wikimedia.org/wikipedia/en/b/b7/Windows_logo.svg"
+      height="50"
+      alt="Windows"
+    /></td>
+    <td>Vista</td>
+    <td>Yes</td>
+    <td>No</td>
+  </tr>
+  <tr>
+    <td>XP</td>
+    <td>Yes</td>
+    <td>No</td>
+  </tr>
+  <tr>
+    <td
+      rowspan="2"
+      align="center"
+    ><img
+      src="http://upload.wikimedia.org/wikipedia/commons/thumb/3/35/Tux.svg/150px-Tux.svg"
+      height="50"
+    /></td>
+    <td><img
+      src="http://upload.wikimedia.org/wikipedia/en/9/94/Fedora_Project_logo.png"
+      height="50"
+      alt="Fedora"
+    /><br/> Versions 7 &amp; higher.</td>
+    <td>Yes</td>
+    <td>Yes</td>
+  </tr>
+  <tr>
+    <td><img
+      src="http://www.ubuntu.com/themes/ubuntu07/images/ubuntulogo.png"
+      height="50"
+      alt="Ubuntu"
+    /><br/>Versions 8.04 LTS (Hardy Heron) &amp; higher.</td>
+    <td>Yes</td>
+    <td>Yes</td>
+  </tr>
+
+  <tr>
+    <td align="center"><img
+      src="http://upload.wikimedia.org/wikipedia/en/d/db/OSXLeopard.svg"
+      height="50"
+    /></td>
+    <td>Mac OS-X 10.5</td>
+    <td>Yes</td>
+    <td>Yes</td>
+  </tr>
+</table>
+
+<h2>Advanced Building Topics</h2>
+<p>
+Hopefully the simpler build set-up works for you, but if not, you can
+delve even further into the mix of Java and Native build systems we
+use for Xuggler</p>
+
+  <p class="readIt">
+  #{a @Xuggler.advbuild() }
+  Read Xuggler Advanced Building Topics &#187;
+  #{/a}
+  </p>

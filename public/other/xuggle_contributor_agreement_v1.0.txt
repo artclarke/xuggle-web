@@ -1,0 +1,104 @@
+﻿Xuggle Contributor Agreement
+
+Thank you for your interest in contributing to the Xuggle, Inc. ("Xuggle")
+product development community. Xuggle is very interested in receiving your
+contribution to the Xuggle products ("Xuggle Products"). However, in order to
+participate, we need to confirm how the rights in your contribution ("Your
+Contributions") will be allocated. Following the practices of other open source
+companies, Xuggle requests that you assign the copyrights and patents in Your
+Contributions to Xuggle (with a license back to you to use it in any way that
+you please). Xuggle requires that you have a Contributor Agreement on file
+prior to using any of Your Contributions.  This Contributor Agreement is to
+make clear the rights between the parties.
+
+If you have not sent us a signed Contributor Agreement, please review and sign
+the Contributor Agreement and send it by facsimile to Xuggle at 314-584-3275
+(USA), or send an original by regular mail to Xuggle, Attn: Art Clarke, 1434
+Page Street, San Francisco, CA  94117, USA.  Please read this Contributor
+Agreement carefully before signing and keep the original for your records.
+
+In consideration for the potential inclusion of Your Contributions in the
+Xuggle Products and the license back, you, on behalf of yourself if you are an
+individual, and on behalf of your company if you are signing this Contributor
+Agreement as an authorized representative of your company, agree to the
+following terms and conditions:
+
+1.The term "Your Contributions" means all of your past, present and future
+contributions of object code, source code and documentation to Xuggle, however
+submitted to the Xuggle, excluding any submissions that are conspicuously
+marked or otherwise designated in writing by you as “Not a Contribution.” 
+
+2.You assign all right, title and interest worldwide in all patents,
+inventions, copyrights and related moral rights ("IP Rights") for the full term
+of their existence in and to Your Contributions to Xuggle and Xuggle shall be
+able to record this assignment.  If the moral rights are not assignable, you
+agree to waive their enforcement against Xuggle and its sublicensees, either
+direct or indirect. However, at the same time, Xuggle grants to you a
+non-exclusive, perpetual, irrevocable, worldwide, royalty free, transferable IP
+Rights license to reproduce, prepare derivative works of, distribute
+(internally and externally, in object code and, if included in Your
+Contributions, source code form), make, use, sell, offer for sale, publicly
+perform and publicly display Your Contributions, with the right to sublicense
+all of these rights through multiple tiers of sublicensees.  The intention of
+the parties is that this license will be as broad as possible and to provide
+you with rights as similar as possible to the rights of the owner of the IP
+Rights. This license is limited to Your Contributions and does not provide any
+rights to the Xuggle Products. 
+
+3.You represent that you are legally entitled to assign the rights and grant
+the license set forth in paragraph 2.  If you are an individual and your
+employer(s) or third parties have rights to intellectual property that you
+create, you represent that you have received permission to make Your
+Contributions on behalf of that employer or third party, or that your employer
+or that third party has waived such rights for Your Contributions to Xuggle.
+
+4.You represent that, except as disclosed in Your Contribution submission(s),
+each of Your Contributions is your original creation.  You represent that Your
+Contribution submission(s) include complete details of any license or other
+restriction (including, but not limited to, related patents, copyrights and
+trademarks) associated with any part of Your Contribution(s) (including a copy
+of any applicable license agreement). You agree to notify Xuggle of any facts
+or circumstances of which you become aware that would make your representations
+in this Agreement inaccurate in any respect.
+
+5.You provided Your Contributions AS IS, WITHOUT WARRANTY OF ANY KIND AND
+DISCLAIMS THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE
+AND NON-INFRINGEMENT. Similarly, the license back to Your Contributions are
+provided AS IS, WITHOUT WARRANTY OF ANY KIND AND DISCLAIMS THE WARRANTIES OF
+MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT
+
+6.IN NO EVENT SHALL EITHER PARTY BE LIABLE TO ANYONE FOR ANY CONSEQUENTIAL,
+SPECIAL, INCIDENTAL OR INDIRECT DAMAGES OF ANY KIND ARISING OUT OF THE USE OF
+YOUR CONTRIBUTIONS, EVEN IF THE USER HAS BEEN ADVISED OF THE POSSIBILITY OF
+SUCH DAMAGES.
+
+7.IN NO EVENT WILL YOU OR Xuggle HAVE ANY LIABILITY FOR ANY CLAIM, WHETHER IN
+CONTRACT, TORT OR ANY OTHER THEORY OF LIABILITY.
+
+8.This Contributor Agreement shall be governed by the laws of the State of
+California as such laws are applied to agreements entered into and to be
+performed entirely within California between California residents and by the
+laws of the United States.  You agree that the United Nations Convention on
+Contracts for the International Sale of Goods (1980) is hereby excluded in its
+entirety from application to this Contributor Agreement.  In the event of
+invalidity of any provision of this Contributor Agreement, the parties agree
+that such invalidity shall not affect the validity of the remaining portions of
+this Contributor Agreement.  This Contributor Agreement is the entire agreement
+between you and Xuggle relating to the subject matter of this Contributor
+Agreement which supersedes any prior agreement, whether written or oral, and
+may be amended only by a writing signed by both parties. This Contributor
+Agreement can be assigned by either party.
+
+
+Please sign: ______________________
+
+Date: 	     ______________________
+
+Your company if you are signing as an authorized representative on behalf of
+your company:
+
+
+Company:     ______________________
+
+Xuggle:      ______________________
+

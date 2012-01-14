@@ -1,0 +1,107 @@
+#{extends 'main-sidebar.html' /}
+#{set title:'Xuggler Downloads' /}
+#{set tab:'download' /}
+<h1>Downloading &amp; Installing</h1>
+<p>Xuggler is composed of two main components; a set of Java <code>jar</code>
+files, and a set of native shared libraries ( <code>.dll</code> files on
+Windows, <code>.so</code> files on Linux, or <code>.dylib</code> files
+on Mac). To use you need to first install the native libraries, and then
+you can write programs that use the Xuggler. Here's the details for
+installing the core Xuggler library.</p>
+<h2>Download</h2>
+In days gone yore, Xuggle provided pre-built binaries for Xuggler, but those days are no longer here.  To get the latest version you must build from source.
+See here for instructions on how to build.  Once you've built, then you can install
+
+<h2>Installation</h2>
+<table cellspacing="0" class="relInstall">
+  <thead>
+    <tr>
+      <th id="col1">OS</th>
+      <th id="col3">Quick Install</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th><img
+        src="http://upload.wikimedia.org/wikipedia/en/thumb/b/b7/Windows_logo.svg/250px-Windows_logo.svg"
+        height="50" alt="Windows" /><br />
+      Windows Vista or XP 32 bit</th>
+      <td>
+      <p>First, uninstall any prior releases of Xuggler. Then run
+      the installer you built from source.</p>
+      </td>
+    </tr>
+    <tr>
+      <th><img
+        src="http://upload.wikimedia.org/wikipedia/commons/thumb/3/35/Tux.svg/150px-Tux.svg"
+        height="50" /><br />
+      Linux</th>
+      <td>
+      <p>
+      See the steps in #{a @Xuggler.build()}building Xuggler from the latest source code#{/a}.
+      </p>
+      </td>
+    </tr>
+    <tr>
+      <th><img
+        src="http://upload.wikimedia.org/wikipedia/en/d/db/OSXLeopard.svg"
+        height="50" /><br />
+      Mac OS X</th>
+      <td>
+      <p>Build for Mac OS X like you would for Linux.</p>
+      <p>The install binaries for Xuggler on Mac OS X only support
+      Intel Macs and Java 1.6.</p>
+      <p>First, remove your previous installation (from whatever
+      directory you installed it in). If you installed it to its own
+      directory, just remove the directory.
+      </p>
+      <p>Then, use the installer you built and run the following from a
+      bash terminal (assuming you called the downloaded file <code>xuggle-xuggler.sh</code>):</p>
+      <pre>chmod a+x ./xuggle-xuggler.sh
+./xuggle-xuggler.sh</pre>
+      <p>If you choose to install into a protected directory, you
+      may need to do:</p>
+      <pre>sudo ./xuggle-xuggler.sh</pre>
+      <p><strong>Lastly, make sure every program using
+      Xuggler has the environment variables defined that the installer
+      tells you to set up.</strong></p>
+      <h4>Running Xuggler From Eclipse</h4>
+      <p>Eclipse ignores the environment settings you set in your
+      bash shell, so you need to tell Mac OS X to set your envionrment
+      settings login-wide. To do that, create the following file:</p>
+      <pre>~/.MacOSX/environment.plist</pre>
+      <p>And edit it so it contains the following text (replace the
+      path with the value the installer tells you to use for
+      DYLD_LIBRARY_PATH). For example:</p>
+      <pre>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;!DOCTYPE plist PUBLIC &quot;-//Apple//DTD PLIST 1.0//EN&quot;
+ &quot;http://www.apple.com/DTDs/PropertyList-1.0.dtd&quot;&gt;
+&lt;plist version=&quot;1.0&quot;&gt;
+  &lt;dict&gt;
+    &lt;key&gt;DYLD_LIBRARY_PATH&lt;/key&gt;
+    &lt;string&gt;/usr/local/xuggler/lib&lt;/string&gt;
+  &lt;/dict&gt;
+&lt;/plist&gt;
+</pre>
+      <p><strong>Then log out and log back in.</strong></p>
+      </td>
+    </tr>
+  </tbody>
+</table>
+<h2>Using Xuggler</h2>
+<p>Once you've successfully installed Xuggler you may want to
+actually use it in your programs. For that, may we suggest you check out
+our Tutorials.</p>
+<p class="readIt">
+#{a @Xuggler.tutorials() }
+Read
+Xuggler Tutorials &#187;
+#{/a}
+</p>
+
+<h2>Licensing</h2>
+<p>Xuggler is licensed under the <a
+  href="<%=request.getContextPath() + "/xuggler/licensing"%>"> GNU
+Lesser General Public License v3 (LGPL)</a>. See the COPYING and
+COPYING.LESSER files in each
+library for details.</p>

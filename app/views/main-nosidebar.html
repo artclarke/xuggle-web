@@ -1,0 +1,45 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <title>#{get 'title'}Xuggle#{/get}</title>
+
+    <!-- standard meta data include -->
+
+    #{ include 'std-meta.html' /}
+  </head>
+  
+  <!-- body note: body id will specify the highlighted sidebar item, -->
+  <!-- see xuggle.css for sidebar identitites -->
+
+  <body id="home">
+    <div id="wrap">
+
+      <!-- header include -->
+      #{ include 'header.html' /}
+ 
+      <div id="main"
+        style="text-align:center"
+      >
+        
+        <!-- content area -->
+
+        <div id="content" class="column"
+        style="width: 100%; padding: 0 0 0 0; text-align:left;"
+                >
+
+          <!-- YOUR CONTENT HERE -->
+          #{doLayout /}
+
+        </div>
+        <!-- end content -->
+
+      </div> 
+      <!-- end main -->
+
+      <!-- footer include -->
+      #{ include 'footer.html' /}
+    </div>
+    <!-- end wrap -->
+  </body>
+</html>
+

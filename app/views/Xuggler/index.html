@@ -1,0 +1,70 @@
+#{extends 'main-sidebar.html' /}
+#{set title:'Xuggler' /}
+#{set tab:'about' /}
+
+<h2>Xuggler</h2>
+<p><a href="http://blog.xuggle.com"><img
+  src="http://feeds.feedburner.com/xuggle.2.gif" alt="Latest News"
+  style="border: 0"></a></p>
+<p>Xuggler is the easy way to uncompress, modify, and re-compress
+any media file (or stream) from Java.
+Xuggler is available under the <a
+  href="http://www.gnu.org/copyleft/lesser.html"> GNU
+Lesser General Public License</a>,  See 
+#{a @Xuggler.licensing() }
+licensing
+#{/a} for more information.</p>
+
+<h2>Demonstrations</h2>
+<h3>Xuggler in Action</h3>
+<div style="text-align: center"><object width="320" height="197">
+  <param name="movie"
+    value="http://www.youtube.com/v/0EvQW94JuJ0&fmt=18&hl=en&fs=1"></param>
+  <param name="allowFullScreen" value="true"></param>
+  <param name="allowscriptaccess" value="always"></param>
+  <embed src="http://www.youtube.com/v/0EvQW94JuJ0&fmt=18&hl=en&fs=1"
+    type="application/x-shockwave-flash" allowscriptaccess="always"
+    allowfullscreen="true" width="320" height="197"></embed></object></div>
+<h3>Using the MediaTools API</h3>
+<div style="text-align: center">
+<object width="320" height="194"><param name="movie" value="http://www.youtube.com/v/9aJvPPzhyik&hl=en&fs=1&"></param><param name="allowFullScreen" value="true"></param><param name="allowscriptaccess" value="always"></param><embed src="http://www.youtube.com/v/9aJvPPzhyik&hl=en&fs=1&" type="application/x-shockwave-flash" allowscriptaccess="always" allowfullscreen="true" width="320" height="194"></embed></object>
+</div>
+
+<h2>Where Do I Get Started?</h2>
+<p>
+<b>You must install Xuggler on your operating system before use.</b>
+</p>
+<p>
+We suggest you start with the #{a @Xuggler.downloads()}Downloads#{/a}
+tab to your left, and then run through the #{a @Xuggler.tutorials()}Tutorials#{/a}
+
+to get familiar with it.
+</p>
+<p>Xuggler consists of a set of Java and Native libraries, and comes
+with two different APIs:</p>
+<table>
+<tr><td>
+<a href="http://build.xuggle.com/view/Stable/job/xuggler_jdk5_stable/javadoc/java/api/com/xuggle/mediatool/package-summary.html">
+MediaTools API</a></td><td>A simple API for encoding and decoding audio and video.</td></tr>
+<tr><td>
+<a href="http://build.xuggle.com/view/Stable/job/xuggler_jdk5_stable/javadoc/java/api/index.html">
+Xuggler API</a></td><td>An advanced-use API (accessible from MediaTools) for encoding and decoding audio and video.</tr>
+</table>
+<h2>Who Should Use It?</h2>
+<p>If you're a Java Developer who needs to programatically
+manipulate video files, either pre-recorded, or live, then Xuggler is
+for you.
+</p>
+<h2>Licensing</h2>
+<p><a href="http://www.gnu.org/copyleft/lesser.html">
+<img src="http://www.gnu.org/graphics/lgplv3-147x51.png" alt="LGPL v3" /></a>
+</p>
+<p>
+Xuggler is licensed under the <a
+  href="http://www.gnu.org/copyleft/lesser.html"> GNU
+Lesser General Public License</a>.  See #{a @Xuggler.licensing()}here for details#{/a}
+</p>
+<h2>Credits</h2>
+<p>
+Xuggler extensively uses <a href="http://www.ffmpeg.org/">FFmpeg</a> to
+compress and uncompress media.

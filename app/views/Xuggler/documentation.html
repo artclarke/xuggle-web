@@ -1,0 +1,56 @@
+#{extends 'main-sidebar.html' /}
+#{set title:'Xuggler Documentation' /}
+#{set tab:'doc' /}
+
+<p>Here's where you'll find the detailed Programmer technical
+documentation. This documentation is generated directly from the source
+code and updated with each new check-in.</p>
+
+<h2>
+<a
+  href="http://build.xuggle.com/view/Stable/job/xuggler_jdk5_stable/javadoc/java/api/index.html">Xuggler Documentation</a></h2>
+<p>
+Xuggler allows Java programs to decode, encode, and experience (almost)
+any video format.</p>
+<p>
+See here for the latest
+<code>javadoc</code>
+API documentation.</p>
+<p class="readIt"><a
+  href="http://build.xuggle.com/view/Stable/job/xuggler_jdk5_stable/javadoc/java/api/index.html">Java
+Documentation &#187;</a></p>
+
+<h2>Xuggler Red5 Adapter Documentation</h2>
+<p>The Xuggler Red5 Adapter augments Xuggler to allow it to read and write
+Red5 streams, and comes with a Transcoder object that does allows you to
+decode and re-encode a live stream. It requires Red5 to already be
+installed, and the environment variable
+<code>RED5_HOME</code>
+to point to the Red5 home directory.</p>
+<p>See here for the latest <code>javadoc</code> API documentation.</p>
+<p class="readIt"><a
+  href="http://build.xuggle.com/job/xuggle_java_xuggler_red5_jdk6_i386_ubuntu/javadoc/java/api/index.html">Java
+Documentation &#187;</a></p>
+
+<h2>Utility Library Documentation</h2>
+<p>
+The Utils library contains various utilities Xuggle uses to test (and
+sometimes to run) our software. This library is not required to actually
+use Xuggler or Xuggler MediaTools, but may contain items you find useful.
+</p>
+<p>See here for the latest <code>javadoc</code> API documentation.</p>
+<p class="readIt"><a
+  href="http://build.xuggle.com/job/xuggle_java_utils_jdk5_i386_ubuntu/javadoc/java/api/index.html">Java
+Documentation &#187;</a></p>
+
+<h2>Xuggle Coding &amp; Release Standards</h2>
+<p>We try to adhere to some standards on platforms we support, code that we
+write, version numbers we use, and how we release new builds. This
+document attempts to capture that.</p>
+<p class="readIt">
+#{a @Xuggler.codingstandards() }
+Xuggle Coding
+&amp; Release Standards &#187;
+#{/a}
+</p>
+

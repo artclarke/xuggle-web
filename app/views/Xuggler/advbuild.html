@@ -1,0 +1,434 @@
+#{extends 'main-sidebar.html' /}
+#{set title:'Xuggler Advanced Building' /}
+#{set tab:'download' /}
+<h1>Advanced Building Topics</h1>
+<h2>Building (the hard way)</h2>
+<p>We try to make the build (relatively) easy, but sometimes, on
+some systems, things might break. To help you debug what's going on,
+here's how the <code>ant</code> build system works.</p>
+<p>First, every <code>ant</code> target (e.g. <code>compile</code>,
+<code>install</code>, <code>run-tests</code>, etc.) is actually composed
+of two targets: a <code>-java</code> target and a <code>-native</code>
+target. For example, to compile just the java source code, run <code>ant
+compile-java</code>.</p>
+<p>The <code>ant</code> build-suite will first attempt to build all
+the native code required for Xuggler, and then build all the Java code.
+It creates a sub-directories under the <code>build/</code> directory for
+all build-generated artifacts. Of particular importance, it creates a
+directory under <code>build/native</code> for all C/C++ generated files,
+and runs <code>configure</code> to try to keep your main directory as
+clean as possible.</p>
+<p>It does this by:</p>
+<ol>
+  <li>creating a directory under <code>build/native</code> based on
+  the OS-name (as given by <code>config.guess</code>)</li>
+  <li><code>cd</code>-ing to that directory, and running <code>sh
+  ../../../configure</code>. If you're curious, you can run <code>configure
+  --help</code> to see a list of the advanced configuration options that
+  Xuggler supports.</li>
+  <li>running <code>make all check</code> to build all the native
+  code, and run all native tests.</li>
+  <li><code>cd</code>-ing back to the top directory, and running <code>ant
+  compile-java run-tests-java</code>.
+</ol>
+<p>If all this succeeds , the <code>ant install</code> does
+something similar, only this time it runs <code>make install</code> to
+have the native build system install all shared libraries in the right
+system. On some operating systems this requires a re-linking of the
+shared libraries. Sorry about that.</p>
+<p>You can feel free to do any of the sub-steps yourself, and
+hopefully that'll help you get this working.</p>
+<h2>Building on Microsoft Windows</h2>
+<p>Building on Windows is much harder than any other OS because you
+can't use the Microsoft Visual C Compiler suite (<a
+  href="http://www.ffmpeg.org">FFmpeg</a> will not build with it).</p>
+<p>This means you need to install the GNU C++/C suite on Windows. If
+you haven't already done this, and built the very latest <a
+  href="http://www.ffmpeg.org">FFmpeg</a>, you may want to check out
+this link for instructions on how to do that: <a
+  href="http://ffmpeg.arrozcru.org/">FFmpeg on Windows Help</a>.</p>
+<p>In general, if you can already build <a
+  href="http://www.ffmpeg.org">FFmpeg</a> on Windows, you'll be
+able to build the Xuggler.</p>
+<p>Also, the <code>ant / autotools</code> build system doesn't do
+well with <code>$XUGGLE_HOME</code> set to a directory name that
+contains spaces or isn't on your C: drive. A good setting to use is <code>c:\msys\local</code>.
+</p>
+
+<h2>Optional Build Software</h2>
+<p>Xuggler has some extra features that aren't enabled by default,
+but are enabled if you have additional software installed. Here's a
+brief description of what those are:</p>
+<h3><a href="http://www.swig.org/">SWIG</a></h3>
+<p>Swig version 1.3.36 or higher.</p>
+<p>By default if SWIG is not installed on your system, the Xuggler
+build system uses some "already generated" java and C++ bindings. But
+you can regenerate from scratch if you want, provided the following
+software is installed.</p>
+<p>Note: our distributions are built with a special version of SWIG
+that converts Javadoc comments in C++ into Javadoc comments in Java. If
+you're poking in this area let us know, and we'll point you in the
+direction of how to do this, but it's not that easy.</p>
+<h3><a href="http://www.valgrind.org/">Valgrind</a></h3>
+<p>Valgrind version 3.3.1 or higher.</p>
+<p>Xuggler comes with the ability to run a set of robust memory
+self-checks on Linux systems using the Valgrind tool. If you install
+that, then:</p>
+<pre>
+make memcheck
+</pre>
+<p>or</p>
+
+<pre>
+ant run-memcheck
+</pre>
+will run this test.
+<p>Be warned, it takes a really long time to run, and will (falsely)
+report lots of errors if you abort it early.</p>
+<h3><a href="http://www.doxygen.org/">Doxygen</a></h3>
+<p>Doxygen 1.5.8 or higher.</p>
+<p>Xuggler comes with self-documenting code. If you want the C++
+version, you'll need Doxygen installed.</p>
+<h3><a href="http://www.graphviz.org/">Graphviz</a></h3>
+<p>Version 2.20.3 or higher.</p>
+<p><code>Doxygen</code> can generate really helpful object-graph
+methods to analyze code, and will use <code>graphviz</code>'s <code>dot</code>
+tool to do this.</p>
+
+<h3>GNU Autotools</h3>
+<p><a href="http://www.gnu.org/software/autoconf/">Autoconf 2.63
+or higher</a>, <a href="http://www.gnu.org/software/automake/">Automake
+1.10.2 or higher</a>, and <a href="http://www.gnu.org/software/libtool/">Libtool
+2.2.6a or higher</a>.</p>
+<p>Xuggle's native code is built using a <code>gnu autotools</code>
+build system. If you want to modify the library (e.g. add or remove
+files from the build), you'll need these tools installed.</p>
+<h3><a href="http://www.tortall.net/projects/yasm/">YASM</a></h3>
+<p>yasm version 0.7.2 or later</p>
+<p>If you have yasm installed when you configure Xuggler, we'll
+include lots of assembly optimizations in <code>libx264</code> and <code>FFmpeg</code>
+that can result in big speed-ups, especially when encoding. By default
+our Windows installer is built with yasm, but other OS's builds must
+install yasm themselves.</p>
+<h2>A word on Captives and using your own version of FFmpeg</h2>
+<p>In order to (believe it or not) simplify the builds for most
+people, Xuggler bundles in it's own versions of:</p>
+<table cellspacing="0">
+  <tr>
+    <td><a href="http://www.ffmpeg.org/"> <img
+      src="http://ffmpeg.org/ffmpeg-logo.png" alt="FFmpeg" height="25" /></a>
+    </td>
+    <td>
+    <p>The best and fastest (and free) raw tool for decoding and
+    encoding media files. It's what does the heavy lifting underneath
+    Xuggler; Xuggler adds a simpler API, additional automatic testing,
+    the ability to embed in other languages with simple memory
+    semantics, and time-stamp adjusting to the core libav* libraries in
+    FFmpeg.</p>
+    </td>
+  </tr>
+  <tr>
+    <td><a href="http://www.videolan.org/developers/x264.html">
+    <img src="http://images.videolan.org/images/videolan-logo.png"
+      alt="FFmpeg" height="25" /></a></td>
+    <td>
+    <p>VideoLAN's libx264 encoder: a free library for encoding
+    H264/AVC video streams. libx264 is the leading open source
+    implementation of H264/AVC encoding. Then you'll be able to use the
+    ICodec.ID.CODEC_ID_H264 encoder.</p>
+    </td>
+  </tr>
+  <tr>
+    <td><a href="http://lame.sourceforge.net/"> <img
+      src="http://lame.sourceforge.net/images/logo.gif" , alt="LAME"
+      height="25" /></a></td>
+    <td>
+    <p>An MP3 encoder that works with <a
+      href="http://www.ffmpeg.org/">FFmpeg</a>. This means by default,
+    Xuggler ships with the ability to encode MP3 audio (<a
+      href="http://www.ffmpeg.org">FFmpeg</a> does not come with an MP3
+    encoder by default).</p>
+    </td>
+  </tr>
+  <tr>
+    <td><a href="http://speex.org/"> <img alt="Speex"
+      src="http://speex.org/images/logos/parrot_speex_org-3.png"
+      height="25" /></a></td>
+    <td>
+    <p>The Speex audio encoder and decoder.</p>
+    </td>
+  </tr>
+  <tr>
+    <td><a href="http://www.theora.org/"> <img alt="Theora"
+      src="http://www.theora.org/images/logos/fish_theora_org.png"
+      height="25" /></a></td>
+    <td>
+    <p>The Theora video encoder and decoder.</p>
+    </td>
+  </tr>
+  <tr>
+    <td><a href="http://www.vorbis.com/"> <img alt="Vorbis"
+      src="http://www.vorbis.com/images/logos/vorbisdotcom.png"
+      height="25" /></a></td>
+    <td>
+    <p>The Vorbis audio encoder and decoder.</p>
+    </td>
+  </tr>
+  <tr>
+    <td><a href="http://www.audiocoding.com/faac.html">FAAC</a></td>
+    <td>
+    <p>The Free Advanced Audio Coder (FAAC) is an open source
+    library that encodes audio into AAC, the same format iPods and
+    iPhones use.</p>
+    </td>
+  </tr>
+</table>
+<p>This is helpful for most people, as it means they don't have to
+build these tools and install them prior to building and installing the
+Xuggler.</p>
+<p>But sometimes you want to use a version of FFmpeg you've built
+yourself (for special codecs). We do support this, but you'll need to
+build the hard way. When running <code>configure</code> yourself, pass <code>--disable-captives</code>.
+Then our build script will not use our internal captive libraries, and
+instead look for the required libraries (really just FFmpeg) on your
+system.</p>
+<p>The recommended way to build your own version of Xuggler's native
+libraries without captive libraries (or with any custom configuration
+options) is as follows</p>
+<pre>
+ant clobber
+mkdir mybuild
+cd mybuild
+../configure --disable-captives
+make
+make check
+sudo make install
+cd ..
+ant stage-java run-tests-java
+sudo ant install-java</pre>
+<p>Once you've installed and build the native ffmpeg of your choice,
+and built your version of the Xuggler native libraries, you can still
+use our <code>ant</code> build system to build the java files. You
+should however only use the <code>-java</code> targets.</p>
+<h2>Xuggler Source-Tree Directory Structure</h2>
+<p>The directory structure used for Xuggler's source tree is as
+follows:</p>
+<ul>
+  <li><code>src/</code>: Java source code</li>
+  <li><code>csrc/</code>: Native (C/C++) source code</li>
+  <li><code>test/</code>: Test source code
+  <ul>
+    <li><code>src/</code>: Java source code</li>
+    <li><code>csrc/</code>: Native (C/C++) source code</li>
+    <li><code>fixtures/</code>: Any files needed or used by the
+    tests. Copied during the build process to <code>build/test/output/fixtures</code>.
+    
+  </ul>
+  </li>
+  <li><code>generated/</code>: Generated source code
+  <ul>
+    <li><code>java/</code>: Java source code generated from <a
+      href="http://www.swig.org/">SWIG</a>.</li>
+    <li><code>native/</code>: Native (C/C++) source code generated
+    from <a href="http://www.swig.org/">SWIG</a> or <a
+      href="http://cxxtest.tigris.org/">CXXTest</a>.</li>
+  </ul>
+  </li>
+  <li><code>captive/</code>: The captive directory contains the
+  source for any additional libraries Xugger also builds (e.g. <a
+    href="http://www.ffmpeg.org/">FFmpeg</a>), along with scripts to
+  integrate them into our build system (the process of integrating a
+  "captive" library is called "incarcerating").</li>
+  <li><code>mk/</code>: The ant, make, and shell scripts needed to
+  build Xuggler.</li>
+  <li><code>doc/</code>: The location of generated documentation.
+  <ul>
+    <li><code>java/</code>: <code>javadoc</code>-generated
+    documentation.</li>
+    <li><code>cpp/</code>: <code>doxygen</code>-generated
+    documentation.</li>
+    <li><code>test/</code>: The results of the latest <code>junit</code>
+    test run.</li>
+  </ul>
+  </li>
+  <li><code>share/</code>: Any other shared Xuggle libraries with
+  similar build systems.</li>
+  <li><code>lib/</code>: Any libraries required for the build
+  process.</li>
+  <li><code>build/</code>: Where all object files and class files
+  get built during the build process, and where all tests run from. This
+  directory is destroyed when <code>ant clobber</code> is called.
+  <ul>
+    <li><code>native/</code>: Where all native object (<code>.o</code>)
+    files, shared libraries (e.g. <code>.dll</code> or <code>.so</code>
+    files) are built.
+    <ul>
+      <li><code><i>OS-SPECIFIC-DIRECTORY</i>/</code>: A directory
+      named based on the output of <code>config.guess</code> from the
+      top level directory.</li>
+    </ul>
+    </li>
+    <li><code>classes/</code>: Where all Java class files for the <code>src/</code>
+    directory are placed.</li>
+    <li><code>lib/</code>: Where all <a
+      href="http://ant.apache.org/ivy/">Ivy</a> retrieved libraries are
+    placed.
+    <ul>
+      <li><code>default/</code>: Libraries needed at runtime.</li>
+      <li><code>compile/</code>: Libraries needed to compile
+      (includes all libraries in <code>default/</code>).</li>
+      <li><code>test/</code>: Libraries needed to test with
+      (includes all libraries in <code>default/</code>).</li>
+    </ul></li>
+    <li><code>test/</code>: Where all Java class files for the <code>test/src</code>
+    directory are placed.
+    <ul>
+      <li><code>output/</code>: Where all JUnit tests run from, and
+      where any test data files are created.
+      <ul>
+        <li><code>fixtures/</code>: Location of fixtures the JUnit
+        tests use. Copied from <code>test/fixtures</code> at the top
+        level directory.
+      </ul>
+      </li>
+    </ul>
+    </li>
+  </ul>
+  </li>
+  <li><code>dist/</code>: Where final versions of shared libraries
+  and JAR files get deposited to.
+  <ul>
+    <li><code>lib/</code>: Any required jar files that must also be
+    installed with the jar files published by this application.</li>
+    <li><code>stage/</code>: The final installtion files are
+    installed here, <code>ant install</code> just copies the entire
+    contents of this directory to <code>/</code>.</li>
+    <li><code>ivys/</code>: If you don't define the environment
+    variable <code>$XUGGLE_REPO</code>, then all ivy published files are
+    published here, and builds search here for dependencies.</li>
+  </ul>
+  </li>
+  <li><code>build.xml</code>: The <code>ant</code> build script.</li>
+  <li><code>configure</code>: The <code>autools</code>-generated
+  configure script. In general <b>do not run this script yourself</b>.
+  The <code>ant</code> build system will run it for you from <code>build/native/<i>OS-SPECIFIC-DIRECTORY</i></code>
+</ul>
+<h2>Xuggler Installation Tree Directory Structure</h2>
+The directory structure used for Xuggler's installation tree (i.e
+<code>$XUGGLE_HOME</code>
+) is as follows:
+<ul>
+  <li><code>bin/</code>: Any executable programs (and <code>.dll</code>
+  files under Windows).</li>
+  <li><code>lib/</code>: Any shared libraries (<code>.so</code> or
+  <code>.dylib</code> files), and static-linkage (<code>.a</code>)
+  files.</li>
+  <li><code>include/</code>: Any C/C++ header files needed to for
+  external libraries to integrate Xuggler into their builds.</li>
+  <li><code>share/</code>: Any os-independent data files (such as
+  Java <code>.jar</code> files).
+  <ul>
+    <li><code>java/jars</code>: Java <code>.jar</code> files for
+    the installed library and its dependencies.</li>
+  </ul>
+  </li>
+</ul>
+<h2>Xuggler Build System Targets</h2>
+<table cellspacing="0">
+  <tr>
+    <td><code>ant clean</code></td>
+    <td>Clean all generated Java and Native files</td>
+  </tr>
+  <tr>
+    <td><code>ant clean-java</code></td>
+    <td>Clean just the generated Java files (e.g. <code>.class</code>
+    files).</td>
+  </tr>
+  <tr>
+    <td><code>ant clean-native</code></td>
+    <td>Clean just the generated Native files (e.g. <code>.o</code>
+    files). Really runs <code>make clean</code> in the Native build
+    tree.</td>
+  </tr>
+  <tr>
+    <td><code>ant clobber</code></td>
+    <td>Clean all generated Java and Native files, and force a
+    reconfiguration on next build</td>
+  </tr>
+  <tr>
+    <td><code>ant clobber-java</code></td>
+    <td>Remove all generated java directories (and Native) and
+    forces a reconfiguration on the next build. This is the fastest way
+    to nuke everything.</td>
+  </tr>
+  <tr>
+    <td><code>ant clobber-native</code></td>
+    <td>Remove all generated Native files, and force a
+    reconfiguration on the next build. Really runs <code>make
+    distclean</code> in the Native build tree.</td>
+  </tr>
+  <tr>
+    <td><code>ant compile</code></td>
+    <td>Compile the Native and then the Java files.</td>
+  </tr>
+  <tr>
+    <td><code>ant compile-java</code></td>
+    <td>Compile just the Java (<code>.java</code>) files.</td>
+  </tr>
+  <tr>
+    <td><code>ant compile-native</code></td>
+    <td>Compile just the Native (<code>.cpp</code>) files, and
+    optionally generated any required <code>.java</code> files. Really
+    just runs <code>make all</code> in the Native build tree.</td>
+  </tr>
+  <tr>
+    <td><code>ant run-tests</code></td>
+    <td>Compile and run the Native and Java test suites.</td>
+  </tr>
+  <tr>
+    <td><code>ant run-tests-java</code></td>
+    <td>Compile and run the Java test suite; requires a build of
+    the Native code.</td>
+  </tr>
+  <tr>
+    <td><code>ant run-tests-native</code></td>
+    <td>Compile and run the Native test suite. Really just runs <code>make
+    check</code> in the Native build tree.</td>
+  </tr>
+  <tr>
+    <td><code>ant stage</code></td>
+    <td>Compile and link all native and java libraries, and install
+    them in their final locations but prefixed with <code>dist/stage</code></td>
+  </tr>
+  <tr>
+    <td><code>ant stage-java</code></td>
+    <td>Compile and link all native and java libraries, and install
+    them in their final locations but prefixed with <code>dist/stage</code></td>
+  </tr>
+  <tr>
+    <td><code>ant stage-native</code></td>
+    <td>Compile and link all native and java libraries, and install
+    them in their final locations but prefixed with <code>dist/stage</code></td>
+  </tr>
+  <tr>
+    <td><code>ant install</code></td>
+    <td>Copies staged installation from <code>dist/stage</code> to
+    their final homes in <code>$XUGGLE_HOME</code>. ant stage must be
+    run first.</td>
+  </tr>
+
+  <tr>
+    <td><code>ant doc</code></td>
+    <td>Build all documentation.</td>
+  </tr>
+  <tr>
+    <td><code>ant doc-java</code></td>
+    <td>Build all <code>javadoc</code> documentation.</td>
+  </tr>
+  <tr>
+    <td><code>ant doc-native</code></td>
+    <td>Build all native documentation. <code>doxygen</code> must
+    have been installed during the configure run in order for this to
+    work.</td>
+  </tr>
+</table>
