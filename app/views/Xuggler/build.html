@@ -66,6 +66,14 @@ the downloads page.</p>
           </p>
         </li>
         <li>
+          <p>Make sure that Xcode still has SDKs available at:</p>
+          <pre>/Developer/SDKs</pre>
+          <p>If not, it's likely because Xcode decided to move them.  Make a soft
+             link (change to where your Xcode is):</p>
+          <pre>sudo ln -s /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer /Developer</pre>
+        </li>
+
+        <li>
           <p>
             Some OS X users have found that if the number of environment
             variables is fewer then 40, javac core dumps.  A work around
