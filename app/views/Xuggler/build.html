@@ -26,7 +26,6 @@ the downloads page.</p>
       <li><a href="http://www.gnu.org/software/make/">gmake
       3.81 or higher</a></li>
       <li><a href="http://www.tortall.net/projects/yasm/"> Yasm 0.7 or higher </a></li>
-      <li><a href="http://www.openssl.org/">OpenSSL 0.9.8g or later</a></li>
       <li><a href="http://www.freedesktop.org/wiki/Software/pkg-config">pkg-config 0.26 or higher</a></li>
       <li>Internet Access. The first time you build Xuggler it will
       download some required <code>.jar</code> files using <a
@@ -41,10 +40,6 @@ the downloads page.</p>
     <td>Additional Windows Requirements</td>
     <td>
     <ul>
-      <li><a href="http://www.microsoft.com/express/vc/">
-      Microsoft's Visual C++ compiler for the <code>lib</code> tool.
-      </a>
-      </li>
       <li><a href="http://www.mingw.org/">
         mingw and msys with
       windows runtime 3.15.1 and gcc 4.2.4; other versions may not work
@@ -66,17 +61,16 @@ the downloads page.</p>
         <li>
           <p>Get the most recent 
             <a href="http://developer.apple.com/TOOLS/xcode/">
-              Apple development tools (XCode 3.1.2 or later)
+              Apple development tools (Xcode 4.1 or later)
             </a>
           </p>
         </li>
         <li>
-          <p>On Lion, the XCode compiler does not work and needs to be replaced instead
-with <i>clang</i>.  To do that, try:</p>
-<pre>
-export CC=clang
-export CXX=clang++
-</pre>
+          <p>Get the most recent Graphics Tools for Xcode
+            <a href="https://developer.apple.com/downloads/index.action?name=for%20Xcode%20#">
+              Graphics Tools for Xcode
+            </a>
+          </p>
         </li>
         <li>
           <p>
@@ -117,7 +111,7 @@ exit</pre>
             in "-server" mode.  If you need to force it to 32 bit (java 1.5 client mode), pass
             the following option on all <code><b>ant</b></code> calls:
           </p>
-          <pre>ant -Dbuild.m64=no</pre>
+          <pre>ant -Dconfigure.build.os=i386-apple-darwin</pre>
         </li>
       </ul>
     </td>
@@ -226,11 +220,16 @@ version of Xuggler</strong></p>
   to build 32 bit.  For that:
 </p>
 <pre>
-ant -Dbuild.m64=no clobber run-tests
+ant -Dbuild.configure.os=i386-apple-darwin clobber run-tests
 </pre>
 <p>
-Once you do that, any other <code>ant</code> commands will continue to
-use the 32-bit version until the next time <code>ant</code> runs <code>configure</code>.
+And here for example is building the 64-bit of windows .
+</p>
+<pre>
+ant -Dbuild.configure.os=x86_64-w64-mingw32 clobber run-tests
+</pre>
+<p>
+You must pass the same -D option to every call of ant.
 </p>
 <h3>Cleaning Your Build Tree</h3>
 <p>To clean out your build tree of all Java compiled files, run:</p>
@@ -267,9 +266,9 @@ you do so we can update this page.</p>
       height="50"
       alt="Windows"
     /></td>
-    <td>Vista</td>
+    <td>Windows 7 &amp; Vista</td>
     <td>Yes</td>
-    <td>No</td>
+    <td>Builds, but not tested</td>
   </tr>
   <tr>
     <td>XP</td>
