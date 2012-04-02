@@ -2,106 +2,268 @@
 #{set title:'Xuggler Downloads' /}
 #{set tab:'download' /}
 <h1>Downloading &amp; Installing</h1>
-<p>Xuggler is composed of two main components; a set of Java <code>jar</code>
-files, and a set of native shared libraries ( <code>.dll</code> files on
-Windows, <code>.so</code> files on Linux, or <code>.dylib</code> files
-on Mac). To use you need to first install the native libraries, and then
-you can write programs that use the Xuggler. Here's the details for
-installing the core Xuggler library.</p>
-<h2>Download</h2>
-In days gone yore, Xuggle provided pre-built binaries for Xuggler, but those days are no longer here.  To get the latest version you must build from source.
-See #{a @Xuggler.build()}here for instructions on how to build#{/a}.  Once you've built, then you can install xugger.
-
-<h2>Installation</h2>
+<h2>Supported operating systems</h2>
+<p>Xuggler consists of a small amount of Java (i.e. architecture independent) code and a
+large amount of native code that needs to be specifically compiled for different operating systems.
+In this way <b>it is different than 99.99% of all Java jars</b> in that if it has the wrong
+native bits it cannot run on your operating system.</p>
+<p>The good news is that (as of Xuggler 5.2) for the users of the following operating systems, they can
+effectively ignore that distinction:<p>
 <table cellspacing="0" class="relInstall">
   <thead>
     <tr>
-      <th id="col1">OS</th>
-      <th id="col3">Quick Install</th>
+      <th id="col1">OS Family</th>
+      <th id="col3">"No install" versions</th>
     </tr>
   </thead>
   <tbody>
     <tr>
       <th><img
         src="http://upload.wikimedia.org/wikipedia/en/thumb/b/b7/Windows_logo.svg/250px-Windows_logo.svg"
-        height="50" alt="Windows" /><br />
-      Windows Vista or XP 32 bit</th>
+        height="50" alt="Windows" />
       <td>
-      <p>First, uninstall any prior releases of Xuggler. Then run
-      the installer you built from source.</p>
+      Windows XP or later, 32 or 64-bit versions.  <a href="http://www.gnu.org/copyleft/gpl.html">GPL version only</a>
       </td>
     </tr>
     <tr>
       <th><img
         src="http://upload.wikimedia.org/wikipedia/commons/thumb/3/35/Tux.svg/150px-Tux.svg"
-        height="50" /><br />
-      Linux</th>
+        height="50" /></th>
       <td>
-      <p>
-      See the steps in #{a @Xuggler.build()}building Xuggler from the latest source code#{/a}.
-      </p>
+      Linux using libc version 6, 32 or 64-bit (i.e. Ubuntu 11.10 and later).
       </td>
     </tr>
     <tr>
       <th><img
-        src="http://upload.wikimedia.org/wikipedia/en/d/db/OSXLeopard.svg"
-        height="50" /><br />
-      Mac OS X</th>
+        src="http://upload.wikimedia.org/wikipedia/en/8/81/Mac_OS_Logo_with_Text.svg"
+        height="50" /></th>
       <td>
-      <p>Build for Mac OS X like you would for Linux.</p>
-      <p>The install binaries for Xuggler on Mac OS X only support
-      Intel Macs and Java 1.6.</p>
-      <p>First, remove your previous installation (from whatever
-      directory you installed it in). If you installed it to its own
-      directory, just remove the directory.
-      </p>
-      <p>Then, use the installer you built and run the following from a
-      bash terminal (assuming you called the downloaded file <code>xuggle-xuggler.sh</code>):</p>
-      <pre>chmod a+x ./xuggle-xuggler.sh
-./xuggle-xuggler.sh</pre>
-      <p>If you choose to install into a protected directory, you
-      may need to do:</p>
-      <pre>sudo ./xuggle-xuggler.sh</pre>
-      <p><strong>Lastly, make sure every program using
-      Xuggler has the environment variables defined that the installer
-      tells you to set up.</strong></p>
-      <h4>Running Xuggler From Eclipse</h4>
-      <p>Eclipse ignores the environment settings you set in your
-      bash shell, so you need to tell Mac OS X to set your envionrment
-      settings login-wide. To do that, create the following file:</p>
-      <pre>~/.MacOSX/environment.plist</pre>
-      <p>And edit it so it contains the following text (replace the
-      path with the value the installer tells you to use for
-      DYLD_LIBRARY_PATH). For example:</p>
-      <pre>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
-&lt;!DOCTYPE plist PUBLIC &quot;-//Apple//DTD PLIST 1.0//EN&quot;
- &quot;http://www.apple.com/DTDs/PropertyList-1.0.dtd&quot;&gt;
-&lt;plist version=&quot;1.0&quot;&gt;
-  &lt;dict&gt;
-    &lt;key&gt;DYLD_LIBRARY_PATH&lt;/key&gt;
-    &lt;string&gt;/usr/local/xuggler/lib&lt;/string&gt;
-  &lt;/dict&gt;
-&lt;/plist&gt;
-</pre>
-      <p><strong>Then log out and log back in.</strong></p>
+      Mac OS X 10.7 32 or 64-bit.
       </td>
     </tr>
   </tbody>
-</table>
-<h2>Using Xuggler</h2>
-<p>Once you've successfully installed Xuggler you may want to
-actually use it in your programs. For that, may we suggest you check out
-our Tutorials.</p>
-<p class="readIt">
-#{a @Xuggler.tutorials() }
-Read
-Xuggler Tutorials &#187;
-#{/a}
+  </table>
+<p>The bad news is that the versions we compile into Jar files for you are distribued under the #{a @Xuggler.licensing() }GPL#{/a}.  If you 
+need the #{a @Xuggler.licensing()}LGPL#{/a} or you need support for an operating system <b>not mentioned</b> above, you will need to
+#{a @Xuggler.build()}compile and build Xuggler from source#{/a} yourself.  Xuggler can build on most intel-based computers (not Android or iOS).</p>
+
+<h2>Download</h2>
+<p>
+We recommend using Xuggler with either Maven or Ivy for dependency management.
+</p>
+<h3>Using Xuggler with Apache Maven</h3>
+<p>
+<img src="http://upload.wikimedia.org/wikipedia/commons/0/0b/Maven_logo.svg" height="50" />
+</p>
+<p>Add the following to your <code>pom.xml</code> file.  Change the version number to the
+version of Xuggler you want.</p>
+<pre>
+&lt;project&gt;
+...
+ &lt;repositories&gt;
+  ...
+  &lt;repository&gt;
+   &lt;id&gt;xuggle repo&lt;/id&gt;
+   &lt;url&gt;http://xuggle.googlecode.com/svn/trunk/repo/share/java/&lt;/url&gt;
+  &lt;/repository&gt;
+  ...
+ &lt;/repositories&gt;
+ ...
+ &lt;dependencies&gt;
+  ...
+  &lt;dependency&gt;
+   &lt;groupId&gt;xuggle&lt;/groupId&gt;
+   &lt;artifactId&gt;xuggle-xuggler&lt;/artifactId&gt;
+   &lt;version&gt;5.2&lt;/version&gt;
+  &lt;/dependency&gt;
+  ...
+ &lt;/dependencies&gt;
+ ...
+&lt;/project&gt;
+</pre>
+<p>
+See the <a href="https://github.com/xuggle/xuggle-xuggler-test">xuggle-xuggler-test</a> project for an example of a Maven-based java program
+that depends on Xuggler (this project executes lots of long-running CPU-intensive tests of Xuggler).  Examine that project's
+<a href="https://github.com/xuggle/xuggle-xuggler-test/blob/master/pom.xml">pom.xml</a> file.
+</p>
+<h3>Using Xuggler with Apache Ivy</h3>
+<p>
+<img src="http://ant.apache.org/ivy/images/ivy-lierre.png" height="50"/>
+</p>
+<p>Add the following to your <code>ivy.xml</code> file.  Change the version number to the
+version of Xuggler you want.</p>
+<pre>
+&lt;ivy-module&gt;
+...
+ &lt;dependencies&gt;
+  ...
+  &lt;dependency org="xuggle" name="xuggle-xuggler" rev="5.2" /&gt;
+  ...
+ &lt;/dependencies&gt;
+...
+&lt;/ivy-module&gt;
+</pre>
+<p>Add the following to your <code>ivysettings.xml</code> file.  This tells ivy where the Xuggler
+repository is and how it's organized</p>
+<pre>
+&lt;ivysettings&gt;
+...
+ &lt;resolvers&gt;
+ ...
+ &lt;url m2compatible="true" name="xugglecode"&gt;
+  &lt;ivy pattern="http://xuggle.googlecode.com/svn/trunk/repo/share/java/[organization]/[artifact]/[revision]/ivy-[revision].xml"/&gt;
+  &lt;ivy pattern="http://xuggle.googlecode.com/svn/trunk/repo/share/java/[organization]/[artifact]/ivy-[revision].xml"/&gt;
+  &lt;artifact pattern="http://xuggle.googlecode.com/svn/trunk/repo/share/java/[organisation]/[artifact]/[revision]/[artifact](-[revision]).[ext]" /&gt;
+  &lt;artifact pattern="http://xuggle.googlecode.com/svn/trunk/repo/share/java/[organisation]/[artifact]/[artifact](-[revision]).[ext]" /&gt;
+  &lt;artifact pattern="http://xuggle.googlecode.com/svn/trunk/repo/share/java/[organisation]/[artifact](-[revision]).[ext]" /&gt;
+  &lt;artifact pattern="http://xuggle.googlecode.com/svn/trunk/repo/share/java/[artifact](-[revision]).[ext]" /&gt;
+  &lt;artifact pattern="http://build.xuggle.com/view/Stable/job/red5_jdk6_stable/lastSuccessfulBuild/artifact/workingcopy/dist/[artifact].[ext]" /&gt;
+ &lt;/url&gt;    
+ ...
+ &lt;chain name="default" changingPattern=".*SNAPSHOT"&gt;
+  ...
+  &lt;!-- Make sure you use the xugglecode resolver when trying to resolve --&gt;
+  &lt;resolver ref="xugglecode"/&gt;
+  ...
+ &lt;/chain&gt; 
+ ...
+ &lt;/resolvers&gt;
+...
+&lt;/ivysettings&gt;
+</pre>
+<h3>Using Xuggler WITHOUT Apache Maven or Apache Ivy</h3>
+<p>
+What are you... stuck in 2003?  Anyway, if you insist on this, Xuggler's pre-compiled binaries (including native versions) can
+ be <a href="http://xuggle.googlecode.com/svn/trunk/repo/share/java/xuggle/xuggle-xuggler/">found here</a>.
+Make sure that <code>xuggle-xuggler.jar</code> and its dependencies are
+included in your Java classpath.  See the <code>xuggle-xugger-*.pom</code> file  distributed with the version of Xuggler that you use to find the (small) set
+of dependent jars, and download them as well.</p>
+
+<h3>Using Xuggler with J2EE Containers</h3>
+<p>
+Xuggler contains Native Code and therefore requires special installation with J2EE containers such as Tomcat, Jetty or Glassfish.  It must be installed in a location
+where the J2EE container loads it, rather than a specific web application (unless you can guarantee that your application is the only application in the server that will
+load Xuggler).  You will have to look up the specific documentation for your specific container, but as an example, for Tomcat make sure you install <code>xuggle-xuggler.jar</code>
+file to <code>$CATALINA_HOME/shared/lib</code>.  See <a href="http://wiki.apache.org/tomcat/HowTo#I.27m_encountering_classloader_problems_when_using_JNI_under_Tomcat">tomcat JNI notes</a>
+for the reason why.
 </p>
 
+<h3>Choosing which files to depend on</h3>
+<p>
+We ship Xuggler with a few jar files.  Most users will only need <code>xuggle-xuggler.jar</code> but the others provide options
+for advanced use cases.  For example, some users only want to support one operating system (e.g. Windows 32-bit) and want
+to minimize download size, and so we provide some jar files that contain support for only one operating system.  Read on
+for more information.
+</p>
+<table cellspacing="0" class="relInstall">
+<thead>
+<th>Filename</th>
+<th>Contents</th>
+</thead>
+<tbody>
+<tr>
+<th>
+<code>xuggle&#8209;xuggler.jar</code>
+</th>
+<td><p>
+Java code <b>and</b> native code for each of the operating systems above.</p>
+<p>This Jar file should work on any of the operating systems above.  The Xuggler native code
+is compiled as one large shared object file per operating systems, and each shared object
+can be found in a subdirectory at <code>com/xuggler/ferry</code> in the
+classpath of the jar file.  There is a properties file named <code>com/xuggle/ferry/native-contents.properties</code>
+that is used by Xuggler to determine which operating systems are supported in each Jar file, which allows Xuggler to have
+more than one operating system's native code in a single jar file.</p>
+</td>
+</tr>
+<tr>
+<th>
+<code>xuggle&#8209;xuggler&#8209;noarch.jar</code>
+</th>
+<td><p>
+Java code only for Xuggler.</p>
+<p>If using this jar file, it is the user's responsibility to ensure that an appropriate native-only
+jar file is ALSO included in the classpath for the operating system desired, or that the Xuggler native libraries are available via
+the operating systems' dynamic loading capability (i.e. how Xuggler 4.x and earlier used to work).</p>
+</td>
+</tr>
+<tr>
+<th>
+<code>xuggle&#8209;xuggler&#8209;arch&#8209;i686&#8209;w64&#8209;mingw32.jar</code>
+</th>
+<td><p>
+An architecture-specific jar file containing only native code for Xuggler compiled for Windows 32-bit Java Virtual Machines.</p>
+<p>If using this jar file, you should also include <code>xuggle-xuggler-noarch.jar</code> with your application to
+get the Java code.</p><p><b>This jar file cannot be used along side any of the other architecture-specific jar files.</b>  i.e. 
+users must ensure only one of these types of jars is included per application.</p>
+</td>
+</tr>
+<tr>
+<th>
+<code>xuggle&#8209;xuggler&#8209;arch&#8209;x86_64&#8209;w64&#8209;mingw32.jar</code>
+</th>
+<td><p>
+An architecture-specific jar file containing only native code for Xuggler compiled for Windows 64-bit Java Virtual Machines.</p>
+<p>If using this jar file, you should also include <code>xuggle-xuggler-noarch.jar</code> with your application to
+get the Java code.</p><p><b>This jar file cannot be used along side any of the other architecture-specific jar files.</b>  i.e. 
+users must ensure only one of these types of jars is included per application.</p>
+</td>
+</tr>
+<tr>
+<th>
+<code>xuggle&#8209;xuggler&#8209;arch&#8209;i386&#8209;xuggle&#8209;darwin11.jar</code>
+</th>
+<td><p>
+An architecture-specific jar file containing only native code for Xuggler compiled for Mac OS X 10.7 32-bit Java Virtual Machines.</p>
+<p>If using this jar file, you should also include <code>xuggle-xuggler-noarch.jar</code> with your application to
+get the Java code.</p><p><b>This jar file cannot be used along side any of the other architecture-specific jar files.</b>  i.e. 
+users must ensure only one of these types of jars is included per application.</p>
+</td>
+</tr>
+
+<tr>
+<th>
+<code>xuggle&#8209;xuggler&#8209;arch&#8209;x86_64&#8209;xuggle&#8209;darwin11.jar</code>
+</th>
+<td><p>
+An architecture-specific jar file containing only native code for Xuggler compiled for Mac OS X 10.7 64-bit Java Virtual Machines.</p>
+<p>If using this jar file, you should also include <code>xuggle-xuggler-noarch.jar</code> with your application to
+get the Java code.</p><p><b>This jar file cannot be used along side any of the other architecture-specific jar files.</b>  i.e. 
+users must ensure only one of these types of jars is included per application.</p>
+</td>
+</tr>
+<tr>
+<th>
+<code>xuggle&#8209;xuggler&#8209;arch&#8209;i686&#8209;pc&#8209;linux@#8209;gnu.jar</code>
+</th>
+<td><p>
+An architecture-specific jar file containing only native code for Xuggler compiled for Linux 32-bit Java Virtual Machines that link with
+version 6 of the GNU libc.</p>
+<p>If using this jar file, you should also include <code>xuggle-xuggler-noarch.jar</code> with your application to
+get the Java code.</p><p><b>This jar file cannot be used along side any of the other architecture-specific jar files.</b>  i.e. 
+users must ensure only one of these types of jars is included per application.</p>
+</td>
+</tr>
+
+<tr>
+<th>
+<code>xuggle&#8209;xuggler&#8209;arch&#8209;x86_64&#8209;pc&#8209;linux@#8209;gnu.jar</code>
+</th>
+<td><p>
+An architecture-specific jar file containing only native code for Xuggler compiled for Linux 64-bit Java Virtual Machines that link with
+version 6 of the GNU libc.</p>
+<p>If using this jar file, you should also include <code>xuggle-xuggler-noarch.jar</code> with your application to
+get the Java code.</p><p><b>This jar file cannot be used along side any of the other architecture-specific jar files.</b>  i.e. 
+users must ensure only one of these types of jars is included per application.</p>
+</td>
+</tr>
+
+</tbody>
+</table>
+<br />
+
 <h2>Licensing</h2>
-<p>Xuggler is licensed under the #{a @Xuggler.licensing() }
+<p>Xuggler's pre-compiled Jar files are licensed under the #{a @Xuggler.licensing() }
 GNU
-Lesser General Public License v3 (LGPL)#{/a}. See the COPYING and
+General Public License v3 (GPL), but Lesser GNU General Public License v3 (LGPL) can be built#{/a}. See the COPYING and
 COPYING.LESSER files in each
-library for details.</p>
+library for details. </p>
