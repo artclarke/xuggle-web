@@ -5,6 +5,10 @@
 # Home page
 GET     /                                       Application.index
 GET     /about/                                 Application.about
+GET     /xuggler                                Xuggler.index
+GET     /xuggler/                               Xuggler.index
+GET     /downloads                              Xuggler.downloads
+GET     /downloads/                             Xuggler.downloads
 
 # Ignore favicon requests
 GET     /favicon.ico                            404
