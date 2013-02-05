@@ -1,0 +1,10 @@
+<area shape="rect" href="$classcom_1_1xuggle_1_1xuggler_1_1StreamCoder.html" title="com::xuggle::xuggler::StreamCoder" alt="" coords="2043,136,2291,163">
+<area shape="rect" href="$classcom_1_1xuggle_1_1xuggler_1_1IStream.html" title="Represents a stream of similar data (eg video) in a IContainer." alt="" coords="943,110,1156,136">
+<area shape="rect" href="$classcom_1_1xuggle_1_1ferry_1_1RefCounted.html" title="Parent of all Ferry objects &#45;&#45; it mains reference counts in native code." alt="" coords="357,135,573,162">
+<area shape="rect" href="$classcom_1_1xuggle_1_1xuggler_1_1IContainer.html" title="A file (or network data source) that contains one or more IStream objects of audio..." alt="" coords="663,160,889,187">
+<area shape="rect" href="$classcom_1_1xuggle_1_1xuggler_1_1IStreamCoder.html" title="The work horse of the Xuggler: Takes IPacket data from an IContainer (representing..." alt="" coords="924,211,1175,238">
+<area shape="rect" href="$classcom_1_1xuggle_1_1ferry_1_1IBuffer.html" title="Allows Java code to get data from a native buffers, and optionally modify native..." alt="" coords="684,59,868,86">
+<area shape="rect" href="$classcom_1_1xuggle_1_1ferry_1_1AtomicInteger.html" title="Internal only." alt="" coords="7,135,239,162">
+<area shape="rect" href="$classcom_1_1xuggle_1_1xuggler_1_1Container.html" title="com::xuggle::xuggler::Container" alt="" coords="1288,160,1512,187">
+<area shape="rect" href="$classcom_1_1xuggle_1_1ferry_1_1RefPointer.html" title="com::xuggle::ferry::RefPointer\&lt; com::xuggle::ferry::IBuffer \&gt;" alt="" coords="1200,59,1600,86">
+<area shape="rect" href="$classcom_1_1xuggle_1_1ferry_1_1RefPointer.html" title="This class is only useful from C++." alt="" coords="655,8,897,35">

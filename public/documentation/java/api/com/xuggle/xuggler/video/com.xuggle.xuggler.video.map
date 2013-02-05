@@ -1,0 +1,8 @@
+<map id="G" name="G">
+<area shape="rect" href="./AConverter.html" title="&lt;TABLE&gt;" alt="" coords="312,166,435,198"/>
+<area shape="rect" href="./ArgbConverter.html" title="&lt;TABLE&gt;" alt="" coords="552,130,704,162"/>
+<area shape="rect" href="./BgrConverter.html" title="&lt;TABLE&gt;" alt="" coords="557,202,699,234"/>
+<area shape="rect" href="./ConverterFactory.html" title="&lt;TABLE&gt;" alt="" coords="16,86,195,118"/>
+<area shape="rect" href="./ConverterFactory.Type.html" title="&lt;TABLE&gt;" alt="" coords="72,14,139,46"/>
+<area shape="rect" href="./IConverter.html" title="&lt;TABLE&gt;" alt="" coords="44,155,167,208"/>
+</map>

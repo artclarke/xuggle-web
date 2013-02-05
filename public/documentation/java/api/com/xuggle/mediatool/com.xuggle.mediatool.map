@@ -1,0 +1,21 @@
+<map id="G" name="G">
+<area shape="rect" href="./IMediaReader.html" title="&lt;TABLE&gt;" alt="" coords="736,267,883,320"/>
+<area shape="rect" href="./IMediaCoder.html" title="&lt;TABLE&gt;" alt="" coords="411,267,547,320"/>
+<area shape="rect" href="./IMediaWriter.html" title="&lt;TABLE&gt;" alt="" coords="741,355,877,408"/>
+<area shape="rect" href="./AMediaToolMixin.html" title="&lt;TABLE&gt;" alt="" coords="392,518,565,550"/>
+<area shape="rect" href="./MediaToolAdapter.html" title="&lt;TABLE&gt;" alt="" coords="717,446,901,478"/>
+<area shape="rect" href="./AMediaCoderMixin.html" title="&lt;TABLE&gt;" alt="" coords="715,518,904,550"/>
+<area shape="rect" href="./IMediaTool.html" title="&lt;TABLE&gt;" alt="" coords="417,427,540,480"/>
+<area shape="rect" href="./AMediaGeneratorMixin.html" title="&lt;TABLE&gt;" alt="" coords="16,478,243,510"/>
+<area shape="rect" href="./MediaGeneratorAdapter.html" title="&lt;TABLE&gt;" alt="" coords="360,358,597,390"/>
+<area shape="rect" href="./ToolFactory.html" title="&lt;TABLE&gt;" alt="" coords="65,278,193,310"/>
+<area shape="rect" href="./IMediaGenerator.html" title="&lt;TABLE&gt;" alt="" coords="43,347,216,400"/>
+<area shape="rect" href="./MediaListenerAdapter.html" title="&lt;TABLE&gt;" alt="" coords="369,766,588,798"/>
+<area shape="rect" href="./IMediaDebugListener.html" title="&lt;TABLE&gt;" alt="" coords="373,675,584,728"/>
+<area shape="rect" href="./IMediaDebugListener.Mode.html" title="&lt;TABLE&gt;" alt="" coords="52,187,207,240"/>
+<area shape="rect" href="./IMediaDebugListener.Event.html" title="&lt;TABLE&gt;" alt="" coords="52,99,207,152"/>
+<area shape="rect" href="./IMediaViewer.html" title="&lt;TABLE&gt;" alt="" coords="407,587,551,640"/>
+<area shape="rect" href="./IMediaViewer.Mode.html" title="&lt;TABLE&gt;" alt="" coords="52,11,207,64"/>
+<area shape="rect" href="./IMediaListener.html" title="&lt;TABLE&gt;" alt="" coords="52,631,207,684"/>
+<area shape="rect" href="./AMediaListenerMixin.html" title="&lt;TABLE&gt;" alt="" coords="25,766,233,798"/>
+</map>

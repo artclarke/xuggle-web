@@ -1,0 +1,9 @@
+<area shape="rect" href="$classcom_1_1xuggle_1_1xuggler_1_1IAudioSamples.html" title="A set of raw (decoded) samples, plus a timestamp for when to play those samples relative..." alt="" coords="568,5,824,32">
+<area shape="rect" href="$classcom_1_1xuggle_1_1xuggler_1_1IMediaDataWrapper.html" title="This class wraps an IMediaData object, but then allows you to set new TimeStamps..." alt="" coords="553,56,839,82">
+<area shape="rect" href="$classcom_1_1xuggle_1_1xuggler_1_1IPacket.html" title="Represents an encoded piece of data that can be placed in an IContainer for a given..." alt="" coords="592,106,800,133">
+<area shape="rect" href="$classcom_1_1xuggle_1_1xuggler_1_1IVideoPicture.html" title="Represents one raw (undecoded) picture in a video stream, plus a timestamp for when..." alt="" coords="573,157,819,184">
+<area shape="rect" href="$classcom_1_1xuggle_1_1ferry_1_1RefCounted.html" title="Parent of all Ferry objects &#45;&#45; it mains reference counts in native code." alt="" coords="5,81,221,108">
+<area shape="rect" href="$classcom_1_1xuggle_1_1xuggler_1_1AudioSamples.html" title="com::xuggle::xuggler::AudioSamples" alt="" coords="904,5,1157,32">
+<area shape="rect" href="$classcom_1_1xuggle_1_1xuggler_1_1MediaDataWrapper.html" title="com::xuggle::xuggler::MediaDataWrapper" alt="" coords="889,56,1172,82">
+<area shape="rect" href="$classcom_1_1xuggle_1_1xuggler_1_1Packet.html" title="com::xuggle::xuggler::Packet" alt="" coords="929,106,1132,133">
+<area shape="rect" href="$classcom_1_1xuggle_1_1xuggler_1_1VideoPicture.html" title="com::xuggle::xuggler::VideoPicture" alt="" coords="909,157,1152,184">

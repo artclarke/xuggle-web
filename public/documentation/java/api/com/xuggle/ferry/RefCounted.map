@@ -1,0 +1,23 @@
+<map id="G" name="G">
+<area shape="rect" href="./Mutex.html" title="&lt;TABLE&gt;" alt="" coords="332,14,409,46"/>
+<area shape="rect" href="./RefCounted.html" title="&lt;TABLE&gt;" alt="" coords="16,810,144,842"/>
+<area shape="rect" href="./RefCountedTester.html" title="&lt;TABLE&gt;" alt="" coords="277,86,464,118"/>
+<area shape="rect" href="./IBuffer.html" title="&lt;TABLE&gt;" alt="" coords="329,158,412,190"/>
+<area shape="rect" href="../xuggler/IVideoResampler.html" title="&lt;TABLE&gt;" alt="" coords="273,227,468,280"/>
+<area shape="rect" href="../xuggler/IPixelFormat.html" title="&lt;TABLE&gt;" alt="" coords="273,315,468,368"/>
+<area shape="rect" href="../xuggler/IAudioResampler.html" title="&lt;TABLE&gt;" alt="" coords="273,403,468,456"/>
+<area shape="rect" href="../xuggler/IStreamCoder.html" title="&lt;TABLE&gt;" alt="" coords="273,491,468,544"/>
+<area shape="rect" href="../xuggler/Global.html" title="&lt;TABLE&gt;" alt="" coords="273,579,468,632"/>
+<area shape="rect" href="../xuggler/IMediaData.html" title="&lt;TABLE&gt;" alt="" coords="273,667,468,720"/>
+<area shape="rect" href="../xuggler/IStream.html" title="&lt;TABLE&gt;" alt="" coords="273,755,468,808"/>
+<area shape="rect" href="../xuggler/IMetaData.html" title="&lt;TABLE&gt;" alt="" coords="273,843,468,896"/>
+<area shape="rect" href="../xuggler/IContainer.html" title="&lt;TABLE&gt;" alt="" coords="273,931,468,984"/>
+<area shape="rect" href="../xuggler/IIndexEntry.html" title="&lt;TABLE&gt;" alt="" coords="273,1019,468,1072"/>
+<area shape="rect" href="../xuggler/IContainerParameters.html" title="&lt;TABLE&gt;" alt="" coords="261,1107,480,1160"/>
+<area shape="rect" href="../xuggler/IProperty.html" title="&lt;TABLE&gt;" alt="" coords="273,1195,468,1248"/>
+<area shape="rect" href="../xuggler/IRational.html" title="&lt;TABLE&gt;" alt="" coords="273,1283,468,1336"/>
+<area shape="rect" href="../xuggler/IContainerFormat.html" title="&lt;TABLE&gt;" alt="" coords="273,1371,468,1424"/>
+<area shape="rect" href="../xuggler/IError.html" title="&lt;TABLE&gt;" alt="" coords="273,1459,468,1512"/>
+<area shape="rect" href="../xuggler/ITimeValue.html" title="&lt;TABLE&gt;" alt="" coords="273,1547,468,1600"/>
+<area shape="rect" href="../xuggler/ICodec.html" title="&lt;TABLE&gt;" alt="" coords="273,1635,468,1688"/>
+</map>

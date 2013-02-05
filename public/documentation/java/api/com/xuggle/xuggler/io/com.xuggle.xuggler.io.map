@@ -1,0 +1,17 @@
+<map id="G" name="G">
+<area shape="rect" href="./URLProtocolManager.html" title="&lt;TABLE&gt;" alt="" coords="48,694,261,726"/>
+<area shape="rect" href="./XugglerIO.html" title="&lt;TABLE&gt;" alt="" coords="516,542,628,574"/>
+<area shape="rect" href="./DataInputOutputHandler.html" title="&lt;TABLE&gt;" alt="" coords="452,182,692,214"/>
+<area shape="rect" href="./IURLProtocolRegistrar.html" title="&lt;TABLE&gt;" alt="" coords="44,227,265,280"/>
+<area shape="rect" href="./InputOutputStreamHandler.html" title="&lt;TABLE&gt;" alt="" coords="440,254,704,286"/>
+<area shape="rect" href="./IURLProtocolHandlerFactory.html" title="&lt;TABLE&gt;" alt="" coords="16,603,293,656"/>
+<area shape="rect" href="./NullProtocolHandlerFactory.html" title="&lt;TABLE&gt;" alt="" coords="440,614,704,646"/>
+<area shape="rect" href="./FileProtocolHandlerFactory.html" title="&lt;TABLE&gt;" alt="" coords="440,686,704,718"/>
+<area shape="rect" href="./FileProtocolHandler.html" title="&lt;TABLE&gt;" alt="" coords="475,326,669,358"/>
+<area shape="rect" href="./NullProtocolHandler.html" title="&lt;TABLE&gt;" alt="" coords="473,398,671,430"/>
+<area shape="rect" href="./FfmpegIOHandle.html" title="&lt;TABLE&gt;" alt="" coords="67,158,243,190"/>
+<area shape="rect" href="./ReadableWritableChannelHandler.html" title="&lt;TABLE&gt;" alt="" coords="411,470,733,502"/>
+<area shape="rect" href="./FfmpegIO.html" title="&lt;TABLE&gt;" alt="" coords="99,86,211,118"/>
+<area shape="rect" href="./IURLProtocolHandler.html" title="&lt;TABLE&gt;" alt="" coords="49,315,260,368"/>
+<area shape="rect" href="./Helper.html" title="&lt;TABLE&gt;" alt="" coords="115,14,195,46"/>
+</map>

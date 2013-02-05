@@ -1,0 +1,13 @@
+<area shape="rect" href="$Logger_8h.html" title="com/xuggle/ferry/Logger.h" alt="" coords="43,238,229,265">
+<area shape="rect" href="$Buffer_8h.html" title="com/xuggle/ferry/Buffer.h" alt="" coords="253,238,435,265">
+<area shape="rect" href="$Packet_8h.html" title="com/xuggle/xuggler/Packet.h" alt="" coords="624,84,827,110">
+<area shape="rect" href="$Ferry_8h.html" title="com/xuggle/ferry/Ferry.h" alt="" coords="393,470,567,497">
+<area shape="rect" href="$Mutex_8h.html" title="com/xuggle/ferry/Mutex.h" alt="" coords="31,316,215,342">
+<area shape="rect" href="$Xuggle_8h.html" title="com/xuggle/Xuggle.h" alt="" coords="584,548,739,574">
+<area shape="rect" href="$RefCounted_8h.html" title="com/xuggle/ferry/RefCounted.h" alt="" coords="512,393,728,420">
+<area shape="rect" href="$IBuffer_8h.html" title="com/xuggle/ferry/IBuffer.h" alt="" coords="383,316,567,342">
+<area shape="rect" href="$RefPointer_8h.html" title="com/xuggle/ferry/RefPointer.h" alt="" coords="505,161,713,188">
+<area shape="rect" href="$IPacket_8h.html" title="com/xuggle/xuggler/IPacket.h" alt="" coords="737,161,945,188">
+<area shape="rect" href="$Xuggler_8h.html" title="com/xuggle/xuggler/Xuggler.h" alt="" coords="752,393,960,420">
+<area shape="rect" href="$IMediaData_8h.html" title="com/xuggle/xuggler/IMediaData.h" alt="" coords="683,238,917,265">
+<area shape="rect" href="$IRational_8h.html" title="com/xuggle/xuggler/IRational.h" alt="" coords="692,316,908,342">

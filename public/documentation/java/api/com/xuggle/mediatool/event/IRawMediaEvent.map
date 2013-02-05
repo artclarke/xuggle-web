@@ -1,0 +1,6 @@
+<map id="G" name="G">
+<area shape="rect" href="./IStreamEvent.html" title="&lt;TABLE&gt;" alt="" coords="16,55,160,108"/>
+<area shape="rect" href="./IRawMediaEvent.html" title="&lt;TABLE&gt;" alt="" coords="277,55,451,108"/>
+<area shape="rect" href="./IVideoPictureEvent.html" title="&lt;TABLE&gt;" alt="" coords="576,11,768,64"/>
+<area shape="rect" href="./IAudioSamplesEvent.html" title="&lt;TABLE&gt;" alt="" coords="568,99,776,152"/>
+</map>

@@ -1,0 +1,14 @@
+<map id="G" name="G">
+<area shape="rect" href="./CaptureScreenToFile.html" title="&lt;TABLE&gt;" alt="" coords="60,750,271,782"/>
+<area shape="rect" href="./DecodeAndPlayAudio.html" title="&lt;TABLE&gt;" alt="" coords="59,678,272,710"/>
+<area shape="rect" href="./DisplayWebcamVideo.html" title="&lt;TABLE&gt;" alt="" coords="57,606,273,638"/>
+<area shape="rect" href="./DecodeAndPlayAudioAndVideo.html" title="&lt;TABLE&gt;" alt="" coords="16,534,315,566"/>
+<area shape="rect" href="./TranscodeAudioAndVideo.html" title="&lt;TABLE&gt;" alt="" coords="40,462,291,494"/>
+<area shape="rect" href="./GenerateAudioAndVideo.html" title="&lt;TABLE&gt;" alt="" coords="44,390,287,422"/>
+<area shape="rect" href="./DecodeAndPlayVideo.html" title="&lt;TABLE&gt;" alt="" coords="59,318,272,350"/>
+<area shape="rect" href="./ConcatenateAudioAndVideo.html" title="&lt;TABLE&gt;" alt="" coords="29,246,301,278"/>
+<area shape="rect" href="./Balls.html" title="&lt;TABLE&gt;" alt="" coords="104,155,227,208"/>
+<area shape="rect" href="./MovingBalls.html" title="&lt;TABLE&gt;" alt="" coords="432,166,560,198"/>
+<area shape="rect" href="./ModifyAudioAndVideo.html" title="&lt;TABLE&gt;" alt="" coords="57,86,273,118"/>
+<area shape="rect" href="./DecodeAndCaptureFrames.html" title="&lt;TABLE&gt;" alt="" coords="33,14,297,46"/>
+</map>

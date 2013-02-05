@@ -1,0 +1,8 @@
+<map id="G" name="G">
+<area shape="rect" href="./DataInputOutputHandler.html" title="&lt;TABLE&gt;" alt="" coords="385,14,625,46"/>
+<area shape="rect" href="./InputOutputStreamHandler.html" title="&lt;TABLE&gt;" alt="" coords="373,86,637,118"/>
+<area shape="rect" href="./FileProtocolHandler.html" title="&lt;TABLE&gt;" alt="" coords="408,158,603,190"/>
+<area shape="rect" href="./NullProtocolHandler.html" title="&lt;TABLE&gt;" alt="" coords="407,230,604,262"/>
+<area shape="rect" href="./ReadableWritableChannelHandler.html" title="&lt;TABLE&gt;" alt="" coords="344,302,667,334"/>
+<area shape="rect" href="./IURLProtocolHandler.html" title="&lt;TABLE&gt;" alt="" coords="16,147,227,200"/>
+</map>

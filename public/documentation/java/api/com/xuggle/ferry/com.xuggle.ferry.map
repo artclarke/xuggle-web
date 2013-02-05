@@ -1,0 +1,19 @@
+<map id="G" name="G">
+<area shape="rect" href="./NativeLogger.html" title="&lt;TABLE&gt;" alt="" coords="49,998,191,1030"/>
+<area shape="rect" href="./Logger.html" title="&lt;TABLE&gt;" alt="" coords="77,926,163,958"/>
+<area shape="rect" href="./Logger.Level.html" title="&lt;TABLE&gt;" alt="" coords="43,835,197,888"/>
+<area shape="rect" href="./JNIReference.html" title="&lt;TABLE&gt;" alt="" coords="48,766,192,798"/>
+<area shape="rect" href="./Mutex.html" title="&lt;TABLE&gt;" alt="" coords="396,622,473,654"/>
+<area shape="rect" href="./JNILibraryLoader.html" title="&lt;TABLE&gt;" alt="" coords="32,622,208,654"/>
+<area shape="rect" href="./RefCounted.html" title="&lt;TABLE&gt;" alt="" coords="56,694,184,726"/>
+<area shape="rect" href="./RefCountedTester.html" title="&lt;TABLE&gt;" alt="" coords="341,694,528,726"/>
+<area shape="rect" href="./IBuffer.html" title="&lt;TABLE&gt;" alt="" coords="393,766,476,798"/>
+<area shape="rect" href="./Ferry.html" title="&lt;TABLE&gt;" alt="" coords="85,550,155,582"/>
+<area shape="rect" href="./AtomicInteger.html" title="&lt;TABLE&gt;" alt="" coords="47,478,193,510"/>
+<area shape="rect" href="./JNINativeFinalizer.html" title="&lt;TABLE&gt;" alt="" coords="28,406,212,438"/>
+<area shape="rect" href="./JNIPointerReference.html" title="&lt;TABLE&gt;" alt="" coords="16,334,224,366"/>
+<area shape="rect" href="./IBuffer.Type.html" title="&lt;TABLE&gt;" alt="" coords="43,243,197,296"/>
+<area shape="rect" href="./JNIMemoryAllocator.html" title="&lt;TABLE&gt;" alt="" coords="19,174,221,206"/>
+<area shape="rect" href="./JNIMemoryManager.html" title="&lt;TABLE&gt;" alt="" coords="17,102,223,134"/>
+<area shape="rect" href="./JNIMemoryManager.MemoryModel.html" title="&lt;TABLE&gt;" alt="" coords="43,11,197,64"/>
+</map>

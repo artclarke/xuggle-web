@@ -1,0 +1,8 @@
+<map id="G" name="G">
+<area shape="rect" href="../ferry/RefCounted.html" title="&lt;TABLE&gt;" alt="" coords="16,111,187,164"/>
+<area shape="rect" href="./IMediaData.html" title="&lt;TABLE&gt;" alt="" coords="304,122,429,154"/>
+<area shape="rect" href="./IPacket.html" title="&lt;TABLE&gt;" alt="" coords="603,14,693,46"/>
+<area shape="rect" href="./IAudioSamples.html" title="&lt;TABLE&gt;" alt="" coords="571,86,725,118"/>
+<area shape="rect" href="./IVideoPicture.html" title="&lt;TABLE&gt;" alt="" coords="577,158,719,190"/>
+<area shape="rect" href="./IMediaDataWrapper.html" title="&lt;TABLE&gt;" alt="" coords="547,230,749,262"/>
+</map>
