@@ -13,12 +13,6 @@ public class Xuggler extends Controller {
     public static void licensing() {
       render();
     }
-    public static void tutorials() {
-      redirect("http://wiki.xuggle.com/Tutorials");
-    }
-    public static void faq() {
-      redirect("http://wiki.xuggle.com/Frequently_Asked_Questions");
-    }
     public static void demos() {
       render();
     }
